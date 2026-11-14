@@ -9,7 +9,7 @@ namespace FirstChannel
         [SerializeField, Min(0f)] private float _arcHeight = 28f;
         [SerializeField, Range(0f, 20f)] private float _fanAngle = 8f;
         [SerializeField, Min(0f)] private float _layoutDuration = 0.3f;
-        [SerializeField, Min(0f)] private float _dealDelay = 0.08f;
+        [SerializeField, Min(0f)] private float _dealDelay = 0.65f;
 
         private RectTransform RectTransform => (RectTransform)transform;
 

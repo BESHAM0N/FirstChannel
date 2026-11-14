@@ -169,6 +169,11 @@ namespace FirstChannel
             _cardHand.SetInteractionEnabled(false);
             view.ShowReplica(replica.Text);
 
+            if (result.Card.CardType == CardType.Weeping)
+                view.PlayCryAnimation();
+            else
+                view.PlayTalkAnimation();
+
             if (replica.VoiceClip != null)
             {
                 _sound.PlayVoice(
@@ -229,7 +234,16 @@ namespace FirstChannel
         private void CompleteCardReaction(List<GuestId> depletedGuests)
         {
             for (int i = 0; i < depletedGuests.Count; i++)
-                GuestEmotionDepleted?.Invoke(depletedGuests[i]);
+            {
+                GuestId guestId = depletedGuests[i];
+
+                _sound.Play(SoundType.ExitCharacter);
+
+                if (_views.TryGetValue(guestId, out GuestView view))
+                    view.HideGuest();
+
+                GuestEmotionDepleted?.Invoke(guestId);
+            }
 
             CardReactionCompleted?.Invoke();
         }

@@ -7,7 +7,11 @@ namespace FirstChannel
 {
     public sealed class GuestView : MonoBehaviour
     {
+        private static readonly int IsTalkHash = Animator.StringToHash("IsTalk");
+        private static readonly int IsCryHash = Animator.StringToHash("IsCry");
+
         [SerializeField] private GuestId _id;
+        [SerializeField] private Animator _animator;
         [SerializeField] private EmotionBarView _emotionBarView;
         [SerializeField] private GameObject _firstFireAnimation;
         [SerializeField] private GameObject _secondFireAnimation;
@@ -43,6 +47,22 @@ namespace FirstChannel
         {
             _dialogPanel.transform.DOKill();
             _dialogPanel.SetActive(false);
+            PlayIdleAnimation();
+        }
+
+        public void PlayTalkAnimation()
+        {
+            SetAnimationState(isTalking: true, isCrying: false);
+        }
+
+        public void PlayCryAnimation()
+        {
+            SetAnimationState(isTalking: false, isCrying: true);
+        }
+
+        public void PlayIdleAnimation()
+        {
+            SetAnimationState(isTalking: false, isCrying: false);
         }
 
         public void PlayCardAppliedFeedback()
@@ -50,6 +70,11 @@ namespace FirstChannel
             transform.DOKill();
             transform.DOPunchScale(Vector3.one * 0.05f, 0.25f, 6, 0.6f)
                 .SetUpdate(true);
+        }
+
+        public void HideGuest()
+        {
+            gameObject.SetActive(false);
         }
 
         private void Awake()
@@ -64,6 +89,15 @@ namespace FirstChannel
 
             _firstFireAnimation.SetActive(isFirstFire);
             _secondFireAnimation.SetActive(isSecondFire);
+        }
+
+        private void SetAnimationState(bool isTalking, bool isCrying)
+        {
+            if (_animator == null)
+                return;
+
+            _animator.SetBool(IsTalkHash, isTalking);
+            _animator.SetBool(IsCryHash, isCrying);
         }
     }
 }
