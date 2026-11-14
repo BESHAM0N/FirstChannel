@@ -19,7 +19,5 @@ namespace FirstChannel
         public CardType CardType;
         [Header("Идентификатор реплики")]
         public CardId CardId;
-        [Header("Допустимые цели")]
-        public CardTarget AllowedTargets = CardTarget.Both;
     }
 }

@@ -101,7 +101,7 @@ namespace FirstChannel
                 return;
             }
 
-            if (target == null || !card.CanTarget(target.Id))
+            if (target == null)
             {
                 view.ReturnToHand();
                 return;
@@ -112,7 +112,7 @@ namespace FirstChannel
             _cardsByView.Remove(view);
             _viewsByCard.Remove(card);
 
-            CardPlayResult result = _effectResolver.Resolve(card, target.Id, _hand.Cards);
+            CardPlayResult result = _effectResolver.Resolve(card, target.Id);
             RefreshEffectValues();
 
             target.PlayCardAppliedFeedback();

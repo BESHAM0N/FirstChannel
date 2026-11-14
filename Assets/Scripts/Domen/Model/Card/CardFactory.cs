@@ -14,30 +14,26 @@ namespace FirstChannel
 
         public List<Card> BuildModels(DeckCardConfig source)
         {
-            if (source?.CardVariants == null)
-                throw new InvalidOperationException("Deck card variants are not configured.");
+            if (source?.Cards == null)
+                throw new InvalidOperationException("Deck cards are not configured.");
 
-            if (source.CardVariants.Length != DeckCard.RequiredCards)
+            if (source.Cards.Length != DeckCard.RequiredCards)
             {
                 throw new InvalidOperationException(
-                    $"Deck must contain exactly {DeckCard.RequiredCards} card variant pairs.");
+                    $"Deck must contain exactly {DeckCard.RequiredCards} cards.");
             }
 
             var result = new List<Card>(DeckCard.RequiredCards);
 
-            for (int i = 0; i < source.CardVariants.Length; i++)
+            for (int i = 0; i < source.Cards.Length; i++)
             {
-                CardVariantConfig variant = source.CardVariants[i];
+                CardConfig config = source.Cards[i];
 
-                if (variant.FirstGuest == null || variant.SecondGuest == null)
-                    throw new InvalidOperationException($"Card variant pair {i + 1} is incomplete.");
-
-                CardConfig selected = UnityEngine.Random.Range(0, 2) == 0
-                    ? variant.FirstGuest
-                    : variant.SecondGuest;
+                if (config == null)
+                    throw new InvalidOperationException($"Card {i + 1} is not configured.");
 
                 var model = new Card();
-                model.Initialize(selected);
+                model.Initialize(config);
                 result.Add(model);
             }
 

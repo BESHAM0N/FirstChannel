@@ -9,19 +9,19 @@ namespace FirstChannel
         private const int BoostMultiplier = 2;
 
         private readonly GuestRoster _guestRoster;
-        private readonly HashSet<Card> _boostedCards = new HashSet<Card>();
+        private bool _isProvocationBoostArmed;
 
         public CardEffectResolver(GuestRoster guestRoster)
         {
             _guestRoster = guestRoster;
         }
 
-        public CardPlayResult Resolve(Card card, GuestId targetGuestId, IReadOnlyList<Card> cardsRemainingInHand)
+        public CardPlayResult Resolve(Card card, GuestId targetGuestId)
         {
             if (card == null)
                 throw new ArgumentNullException(nameof(card));
 
-            bool isBoosted = _boostedCards.Contains(card) && IsProvocation(card);
+            bool isBoosted = _isProvocationBoostArmed && IsProvocation(card);
             int multiplier = isBoosted ? BoostMultiplier : 1;
             int viewers = ResolveViewers(card, targetGuestId) * multiplier;
             int emotion = card.AddEmotionCharacter * multiplier;
@@ -38,10 +38,10 @@ namespace FirstChannel
             }
 
             if (isBoosted)
-                _boostedCards.Clear();
+                _isProvocationBoostArmed = false;
 
             if (card.CardType == CardType.UnexpectedWitness)
-                ArmProvocations(cardsRemainingInHand);
+                _isProvocationBoostArmed = true;
 
             return new CardPlayResult(card, targetGuestId, viewers, emotionChanges);
         }
@@ -71,20 +71,9 @@ namespace FirstChannel
                 : card.AddViewers;
         }
 
-        private void ArmProvocations(IReadOnlyList<Card> cards)
-        {
-            _boostedCards.Clear();
-
-            for (int i = 0; i < cards.Count; i++)
-            {
-                if (IsProvocation(cards[i]))
-                    _boostedCards.Add(cards[i]);
-            }
-        }
-
         private bool IsBoosted(Card card)
         {
-            return card != null && _boostedCards.Contains(card) && IsProvocation(card);
+            return card != null && _isProvocationBoostArmed && IsProvocation(card);
         }
 
         private static bool IsProvocation(Card card)
