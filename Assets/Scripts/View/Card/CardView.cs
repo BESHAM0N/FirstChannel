@@ -11,11 +11,15 @@ namespace FirstChannel
     public sealed class CardView : MonoBehaviour,
         IPointerEnterHandler,
         IPointerExitHandler,
+        IPointerClickHandler,
         IBeginDragHandler,
         IDragHandler,
         IEndDragHandler
     {
         public event Action<CardView, GuestView> DropRequested;
+        public event Action<CardView> Hovered;
+        public event Action<CardView> Clicked;
+        public event Action<CardView> DealStarted;
 
         [SerializeField] private Image _image;
         [SerializeField] private TMP_Text _title;
@@ -161,6 +165,7 @@ namespace FirstChannel
             if (!_isInteractionEnabled || _isDragging || _isConsumed || _homeParent == null)
                 return;
 
+            Hovered?.Invoke(this);
             KillMotion();
             _rectTransform.SetAsLastSibling();
             _motion = DOTween.Sequence()
@@ -169,6 +174,20 @@ namespace FirstChannel
                 .Join(_rectTransform.DOScale(HoverScale, HoverDuration))
                 .SetEase(Ease.OutQuad)
                 .SetUpdate(true);
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData.button != PointerEventData.InputButton.Left ||
+                !_isInteractionEnabled ||
+                _isDragging ||
+                _isConsumed ||
+                _isDealing)
+            {
+                return;
+            }
+
+            Clicked?.Invoke(this);
         }
 
         public void OnPointerExit(PointerEventData eventData)
@@ -280,6 +299,7 @@ namespace FirstChannel
 
             _motion = DOTween.Sequence()
                 .SetDelay(delay)
+                .InsertCallback(0f, () => DealStarted?.Invoke(this))
                 .Join(_rectTransform
                     .DOJump(targetWorldPosition, _dealJumpPower, 1, _dealDuration)
                     .SetEase(Ease.OutCubic))

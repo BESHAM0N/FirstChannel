@@ -167,6 +167,7 @@ namespace FirstChannel
 
         private void OpenMainMenu()
         {
+            _sound.StopLoop();
             SceneManager.LoadScene(_mainMenuSceneName);
         }
     }

@@ -32,11 +32,7 @@ namespace FirstChannel
         {
             KillTweens();
 
-            _valueTween = DOVirtual.Float(
-                    _displayedValue,
-                    value,
-                    _animationDuration,
-                    SetDisplayedValue)
+            _valueTween = DOVirtual.Float(_displayedValue, value, _animationDuration, SetDisplayedValue)
                 .SetEase(Ease.OutCubic)
                 .SetUpdate(true);
 
@@ -49,7 +45,7 @@ namespace FirstChannel
         private void SetDisplayedValue(float value)
         {
             _displayedValue = value;
-            _emotionBarSlider.value = value / EmotionBar.MaxValue;
+            _emotionBarImage.fillAmount = value / EmotionBar.MaxValue;
             _emotionBarText.text = Mathf.RoundToInt(value).ToString();
         }
 

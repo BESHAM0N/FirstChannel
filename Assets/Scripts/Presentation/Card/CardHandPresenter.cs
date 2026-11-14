@@ -7,6 +7,30 @@ namespace FirstChannel
 {
     public sealed class CardHandPresenter : IInitializable, IDisposable
     {
+        private static readonly SoundType[] CardHoverSounds =
+        {
+            SoundType.CardHover_1,
+            SoundType.CardHover_2,
+            SoundType.CardHover_3,
+            SoundType.CardHover_4
+        };
+
+        private static readonly SoundType[] CardClickSounds =
+        {
+            SoundType.CardClick_1,
+            SoundType.CardClick_2,
+            SoundType.CardClick_3,
+            SoundType.CardClick_4
+        };
+
+        private static readonly SoundType[] TakeCardSounds =
+        {
+            SoundType.TakeCard_1,
+            SoundType.TakeCard_2,
+            SoundType.TakeCard_3,
+            SoundType.TakeCard_4
+        };
+
         public event Action<CardPlayResult> CardApplied;
 
         private readonly DeckCardConfig _deckConfig;
@@ -15,6 +39,7 @@ namespace FirstChannel
         private readonly HandCards _hand;
         private readonly CardFactory _cardFactory;
         private readonly CardEffectResolver _effectResolver;
+        private readonly ISoundService _soundService;
         private readonly HandCardView _handView;
         private readonly DeckCardView _deckView;
         private readonly Dictionary<CardView, Card> _cardsByView = new Dictionary<CardView, Card>();
@@ -29,6 +54,7 @@ namespace FirstChannel
             HandCards hand,
             CardFactory cardFactory,
             CardEffectResolver effectResolver,
+            ISoundService soundService,
             HandCardView handView,
             DeckCardView deckView)
         {
@@ -38,6 +64,7 @@ namespace FirstChannel
             _hand = hand;
             _cardFactory = cardFactory;
             _effectResolver = effectResolver;
+            _soundService = soundService;
             _handView = handView;
             _deckView = deckView;
         }
@@ -63,7 +90,7 @@ namespace FirstChannel
                 if (pair.Key == null)
                     continue;
 
-                pair.Key.DropRequested -= OnDropRequested;
+                UnsubscribeFromView(pair.Key);
                 UnityEngine.Object.Destroy(pair.Key.gameObject);
             }
 
@@ -107,7 +134,7 @@ namespace FirstChannel
                 return;
             }
 
-            view.DropRequested -= OnDropRequested;
+            UnsubscribeFromView(view);
             _hand.TryRemove(card);
             _cardsByView.Remove(view);
             _viewsByCard.Remove(card);
@@ -131,12 +158,48 @@ namespace FirstChannel
             CardView view = _cardFactory.CreateView(card);
             view.SetDealOrigin(_deckView.CardOrigin);
             view.SetInteractionEnabled(IsInteractionEnabled);
-            view.DropRequested += OnDropRequested;
+            SubscribeToView(view);
 
             _cardsByView.Add(view, card);
             _viewsByCard.Add(card, view);
             _deckView.PlayDrawFeedback();
             return true;
+        }
+
+        private void SubscribeToView(CardView view)
+        {
+            view.DropRequested += OnDropRequested;
+            view.Hovered += OnCardHovered;
+            view.Clicked += OnCardClicked;
+            view.DealStarted += OnCardDealStarted;
+        }
+
+        private void UnsubscribeFromView(CardView view)
+        {
+            view.DropRequested -= OnDropRequested;
+            view.Hovered -= OnCardHovered;
+            view.Clicked -= OnCardClicked;
+            view.DealStarted -= OnCardDealStarted;
+        }
+
+        private void OnCardHovered(CardView view)
+        {
+            PlayRandom(CardHoverSounds);
+        }
+
+        private void OnCardClicked(CardView view)
+        {
+            PlayRandom(CardClickSounds);
+        }
+
+        private void OnCardDealStarted(CardView view)
+        {
+            PlayRandom(TakeCardSounds);
+        }
+
+        private void PlayRandom(IReadOnlyList<SoundType> sounds)
+        {
+            _soundService.Play(sounds[UnityEngine.Random.Range(0, sounds.Count)]);
         }
 
         private List<CardView> GetOrderedViews()

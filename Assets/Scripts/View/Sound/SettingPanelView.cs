@@ -2,14 +2,16 @@
 using Tools;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
 namespace FirstChannel
 {
     public sealed class SettingPanelView : MonoBehaviour
-    {  
-        public event Action OnBackButtonClicked; 
-        
+    {
+        public event Action OnBackButtonClicked;
+        public event Action<float> MasterVolumeChanged;
+        public event Action<float> MusicVolumeChanged;
+        public event Action<float> EffectVolumeChanged;
+
         [SerializeField] private Button _backButton;
 
         [Header("Volume")]
@@ -19,13 +21,43 @@ namespace FirstChannel
         
         [SerializeField] private UIPanelTweenView _settingPanelTween;
         [SerializeField] private UIPanelTweenView _settingBackPanelTween;
-        
-        [Inject] private ISoundService _sound;
-        
+
+        private bool _isInitialized;
+
+        public void Initialize()
+        {
+            if (_isInitialized)
+                return;
+
+            _isInitialized = true;
+
+            if (_backButton != null)
+                _backButton.onClick.AddListener(BackButtonClick);
+
+            if (_volumeMasterSlider != null)
+                _volumeMasterSlider.onValueChanged.AddListener(OnChangeMasterValue);
+
+            if (_volumeMusicSlider != null)
+                _volumeMusicSlider.onValueChanged.AddListener(OnChangeMusicValue);
+
+            if (_volumeEffectSlider != null)
+                _volumeEffectSlider.onValueChanged.AddListener(OnChangeEffectValue);
+        }
+
+        public void SetVolumeValues(float master, float music, float effects)
+        {
+            if (_volumeMasterSlider != null)
+                _volumeMasterSlider.SetValueWithoutNotify(Mathf.Clamp01(master));
+
+            if (_volumeMusicSlider != null)
+                _volumeMusicSlider.SetValueWithoutNotify(Mathf.Clamp01(music));
+
+            if (_volumeEffectSlider != null)
+                _volumeEffectSlider.SetValueWithoutNotify(Mathf.Clamp01(effects));
+        }
+
         public void OnShow()
         {
-            UpdateSliders();
-     
             if (_settingPanelTween != null)
                 _settingPanelTween.Show();
             else
@@ -45,24 +77,12 @@ namespace FirstChannel
             if (_settingBackPanelTween != null)
                 _settingBackPanelTween.Hide();
         }
-       
-        private void Awake()
+
+        public void Dispose()
         {
-            if (_backButton != null)
-                _backButton.onClick.AddListener(BackButtonClick);
+            if (!_isInitialized)
+                return;
 
-            if (_volumeMasterSlider != null)
-                _volumeMasterSlider.onValueChanged.AddListener(OnChangeMasterValue);
-
-            if (_volumeMusicSlider != null)
-                _volumeMusicSlider.onValueChanged.AddListener(OnChangeMusicValue);
-
-            if (_volumeEffectSlider != null)
-                _volumeEffectSlider.onValueChanged.AddListener(OnChangeEffectValue);
-        }
-        
-        private void OnDestroy()
-        {
             if (_backButton != null)
                 _backButton.onClick.RemoveListener(BackButtonClick);
 
@@ -74,38 +94,33 @@ namespace FirstChannel
 
             if (_volumeEffectSlider != null)
                 _volumeEffectSlider.onValueChanged.RemoveListener(OnChangeEffectValue);
+
+            _isInitialized = false;
         }
-        
-        private void UpdateSliders()
+
+        private void OnDestroy()
         {
-            if (_volumeMasterSlider != null)
-                _volumeMasterSlider.SetValueWithoutNotify(_sound.MasterVolume);
-
-            if (_volumeMusicSlider != null)
-                _volumeMusicSlider.SetValueWithoutNotify(_sound.MusicVolume);
-
-            if (_volumeEffectSlider != null)
-                _volumeEffectSlider.SetValueWithoutNotify(_sound.EffectVolume);
+            Dispose();
         }
 
         private void OnChangeMasterValue(float value)
         {
-            _sound.ChangeMasterVolume(value);
+            MasterVolumeChanged?.Invoke(value);
         }
-        
+
         private void OnChangeMusicValue(float value)
         {
-            _sound.ChangeMusicVolume(value);
+            MusicVolumeChanged?.Invoke(value);
         }
-        
+
         private void OnChangeEffectValue(float value)
         {
-            _sound.ChangeEffectVolume(value);
+            EffectVolumeChanged?.Invoke(value);
         }
 
         private void BackButtonClick()
         {
-            OnBackButtonClicked?.Invoke();   
+            OnBackButtonClicked?.Invoke();
         }
     }
 }

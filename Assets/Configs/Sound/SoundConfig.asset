@@ -12,4 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7508d1104748b4a9d8400bd7b2e991, type: 3}
   m_Name: SoundConfig
   m_EditorClassIdentifier: Assembly-CSharp::FirstChannel.SoundConfig
-  Config: []
+  Config:
+  - SourceType: 0
+    SoundType: 1
+    AudioClip: {fileID: 8300000, guid: 4622e3f2900a6fb43b2ece4c0c5fecd1, type: 3}
+  - SourceType: 1
+    SoundType: 14
+    AudioClip: {fileID: 8300000, guid: 5a533c237d0453c41987e3d541334d46, type: 3}
+  - SourceType: 1
+    SoundType: 3
+    AudioClip: {fileID: 8300000, guid: b38f9cde79838fd4a8e1fa0f06231c13, type: 3}
+  - SourceType: 1
+    SoundType: 7
+    AudioClip: {fileID: 8300000, guid: 7ba5b5ff24fc05b449bb74c69def0f93, type: 3}
+  - SourceType: 1
+    SoundType: 18
+    AudioClip: {fileID: 8300000, guid: ee40ff23006b15d4daf95d534f863626, type: 3}
+  - SourceType: 1
+    SoundType: 19
+    AudioClip: {fileID: 8300000, guid: 6ce0e8d4f9d1eca479bf5dd815ca9466, type: 3}
+  - SourceType: 1
+    SoundType: 20
+    AudioClip: {fileID: 8300000, guid: 1c915180ff8293846a3968175e71018d, type: 3}
+  - SourceType: 1
+    SoundType: 8
+    AudioClip: {fileID: 8300000, guid: 0225f049339ee7e49bd77155c8016e7e, type: 3}
+  - SourceType: 1
+    SoundType: 15
+    AudioClip: {fileID: 8300000, guid: 34176f8092cfe424c9c2504d85d7d3e8, type: 3}
+  - SourceType: 1
+    SoundType: 16
+    AudioClip: {fileID: 8300000, guid: 6509f14a301d6644b909bf284e58e5fe, type: 3}
+  - SourceType: 1
+    SoundType: 17
+    AudioClip: {fileID: 8300000, guid: 375d843e974e08949808c0f2d775af17, type: 3}
+  - SourceType: 1
+    SoundType: 10
+    AudioClip: {fileID: 8300000, guid: ee40400c3cf671b4a980714daff14bfa, type: 3}
+  - SourceType: 1
+    SoundType: 21
+    AudioClip: {fileID: 8300000, guid: a2c1b094d591deb45adb4d85877c6c36, type: 3}
+  - SourceType: 1
+    SoundType: 22
+    AudioClip: {fileID: 8300000, guid: 4aaff87908dabff4b9b7e79b8a2e939a, type: 3}
+  - SourceType: 1
+    SoundType: 23
+    AudioClip: {fileID: 8300000, guid: a183509a5e86b7c498b58e493f810c4e, type: 3}
