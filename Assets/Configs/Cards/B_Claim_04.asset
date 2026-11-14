@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: B_Claim_04
   m_EditorClassIdentifier: Assembly-CSharp::FirstChannel.CardConfig
   Image: {fileID: 0}
-  Name: Претензия
-  Description: Спросите, почему гость так долго молчал
+  Name: "\u041F\u0440\u0435\u0442\u0435\u043D\u0437\u0438\u044F"
+  Description: "\u041F\u043E\u0432\u044B\u0448\u0430\u0435\u0442 \u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440\u044B,
+    \u043D\u043E \u0441\u043D\u0438\u0436\u0430\u0435\u0442 \u0442\u0435\u0440\u043F\u0435\u043D\u0438\u0435
+    \u0433\u043E\u0441\u0442\u044F"
   AddViewers: 220
   AddEmotionCharacter: -15
   CardType: 0
   CardId: 3
   AllowedTargets: 2
-
