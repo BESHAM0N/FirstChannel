@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Дайте договорить!
   Description: Позвольте гостю объясниться
-  AddViewers: 3
-  AddEmotionCharacter: 8
+  AddViewers: 30
+  AddEmotionCharacter: 25
   CardType: 4
   CardId: 12
   AllowedTargets: 2

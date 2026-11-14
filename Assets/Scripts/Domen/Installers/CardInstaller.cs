@@ -21,6 +21,7 @@ namespace FirstChannel
             Container.Bind<DeckCard>().AsSingle();
             Container.Bind<HandCards>().AsSingle();
             Container.Bind<CardFactory>().AsSingle();
+            Container.Bind<CardEffectResolver>().AsSingle();
 
             Container
                 .BindFactory<CardView, CardView.Factory>()

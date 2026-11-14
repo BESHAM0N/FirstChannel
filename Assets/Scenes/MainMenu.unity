@@ -4750,7 +4750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4253f791850845f392f200506f1448ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstChannel.LeaderboardView
-  _titleId: ""
+  _titleId: 1E230E
   _inputNamePanel: {fileID: 513859825}
   _nameInput: {fileID: 156752104}
   _applyButton: {fileID: 667897209}

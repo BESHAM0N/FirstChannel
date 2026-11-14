@@ -67,6 +67,12 @@ namespace FirstChannel
             _viewersValue.text = viewersValue;
         }
 
+        public void SetEffectValues(int emotionValue, int viewersValue)
+        {
+            _emotionValue.text = emotionValue.ToString();
+            _viewersValue.text = viewersValue.ToString();
+        }
+
         public void SetHomePose(
             RectTransform parent,
             Vector2 anchoredPosition,

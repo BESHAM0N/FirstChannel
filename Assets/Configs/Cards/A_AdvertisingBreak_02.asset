@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Рекламная пауза
   Description: Переведите эфир на спонсорскую интеграцию
-  AddViewers: 5
-  AddEmotionCharacter: 10
+  AddViewers: 0
+  AddEmotionCharacter: 20
   CardType: 6
   CardId: 19
   AllowedTargets: 1

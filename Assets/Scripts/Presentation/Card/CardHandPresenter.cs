@@ -7,13 +7,14 @@ namespace FirstChannel
 {
     public sealed class CardHandPresenter : IInitializable, IDisposable
     {
-        public event Action<Card, GuestId> CardApplied;
+        public event Action<CardPlayResult> CardApplied;
 
         private readonly DeckCardConfig _deckConfig;
         private readonly bool _shuffleDeck;
         private readonly DeckCard _deck;
         private readonly HandCards _hand;
         private readonly CardFactory _cardFactory;
+        private readonly CardEffectResolver _effectResolver;
         private readonly HandCardView _handView;
         private readonly DeckCardView _deckView;
         private readonly Dictionary<CardView, Card> _cardsByView = new Dictionary<CardView, Card>();
@@ -27,6 +28,7 @@ namespace FirstChannel
             DeckCard deck,
             HandCards hand,
             CardFactory cardFactory,
+            CardEffectResolver effectResolver,
             HandCardView handView,
             DeckCardView deckView)
         {
@@ -35,6 +37,7 @@ namespace FirstChannel
             _deck = deck;
             _hand = hand;
             _cardFactory = cardFactory;
+            _effectResolver = effectResolver;
             _handView = handView;
             _deckView = deckView;
         }
@@ -109,12 +112,15 @@ namespace FirstChannel
             _cardsByView.Remove(view);
             _viewsByCard.Remove(card);
 
+            CardPlayResult result = _effectResolver.Resolve(card, target.Id, _hand.Cards);
+            RefreshEffectValues();
+
             target.PlayCardAppliedFeedback();
             view.PlayApplied(target, () => UnityEngine.Object.Destroy(view.gameObject));
 
+            CardApplied?.Invoke(result);
             TryDrawCard();
             _handView.LayoutCards(GetOrderedViews(), false);
-            CardApplied?.Invoke(card, target.Id);
         }
 
         private bool TryDrawCard()
@@ -144,6 +150,16 @@ namespace FirstChannel
             }
 
             return result;
+        }
+
+        private void RefreshEffectValues()
+        {
+            foreach (KeyValuePair<Card, CardView> pair in _viewsByCard)
+            {
+                pair.Value.SetEffectValues(
+                    _effectResolver.GetDisplayedEmotion(pair.Key),
+                    _effectResolver.GetDisplayedViewers(pair.Key));
+            }
         }
     }
 }

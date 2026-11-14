@@ -11,7 +11,7 @@ namespace FirstChannel
 
         public void SetData(LeaderboardEntry entry)
         {
-            _placeText.SetText("{0}", entry.Position + 1);
+            _placeText.SetText("{0}", entry.Position);
             _nameText.SetText(string.IsNullOrEmpty(entry.DisplayName) ? "Игрок" : entry.DisplayName);
             _valueText.SetText("{0}", entry.StatValue);
         }

@@ -9,12 +9,13 @@ namespace FirstChannel
     public sealed class PlayFabLeaderboardClient
     {
         public const string StatisticName = "BestViewers";
+        public const string LeaderboardName = "BestViewers";
 
         private readonly MonoBehaviour _coroutineRunner;
         private readonly string _titleId;
-        private string _sessionTicket;
+        private string _entityToken;
 
-        public bool IsLoggedIn => !string.IsNullOrEmpty(_sessionTicket);
+        public bool IsLoggedIn => !string.IsNullOrEmpty(_entityToken);
 
         public PlayFabLeaderboardClient(MonoBehaviour coroutineRunner, string titleId)
         {
@@ -28,13 +29,14 @@ namespace FirstChannel
             {
                 TitleId = _titleId,
                 CustomId = customId,
-                CreateAccount = true
+                CreateAccount = true,
+                LoginTitlePlayerAccountEntity = true
             };
 
-            Post("LoginWithCustomID", JsonUtility.ToJson(request), false, json =>
+            Post("Client/LoginWithCustomID", JsonUtility.ToJson(request), false, json =>
             {
                 LoginResponse response = JsonUtility.FromJson<LoginResponse>(json);
-                _sessionTicket = response.data.SessionTicket;
+                _entityToken = response.data.EntityToken.EntityToken;
                 onSuccess?.Invoke();
             }, onError);
         }
@@ -42,7 +44,7 @@ namespace FirstChannel
         public void SetDisplayName(string displayName, Action onSuccess, Action<PlayFabError> onError)
         {
             DisplayNameRequest request = new DisplayNameRequest { DisplayName = displayName };
-            Post("UpdateUserTitleDisplayName", JsonUtility.ToJson(request), true,
+            Post("Profile/SetDisplayName", JsonUtility.ToJson(request), true,
                 _ => onSuccess?.Invoke(), onError);
         }
 
@@ -52,11 +54,15 @@ namespace FirstChannel
             {
                 Statistics = new[]
                 {
-                    new StatisticUpdate { StatisticName = StatisticName, Value = score }
+                    new StatisticUpdate
+                    {
+                        Name = StatisticName,
+                        Scores = new[] { score.ToString() }
+                    }
                 }
             };
 
-            Post("UpdatePlayerStatistics", JsonUtility.ToJson(request), true,
+            Post("Statistic/UpdateStatistics", JsonUtility.ToJson(request), true,
                 _ => onSuccess?.Invoke(), onError);
         }
 
@@ -64,41 +70,60 @@ namespace FirstChannel
         {
             LeaderboardRequest request = new LeaderboardRequest
             {
-                StatisticName = StatisticName,
-                StartPosition = 0,
-                MaxResultsCount = 30
+                LeaderboardName = LeaderboardName,
+                StartingPosition = 1,
+                PageSize = 30
             };
 
-            Post("GetLeaderboard", JsonUtility.ToJson(request), true, json =>
+            Post("Leaderboard/GetLeaderboard", JsonUtility.ToJson(request), true, json =>
             {
                 LeaderboardResponse response = JsonUtility.FromJson<LeaderboardResponse>(json);
-                onSuccess?.Invoke(response.data.Leaderboard ?? Array.Empty<LeaderboardEntry>());
+                EntityLeaderboardEntry[] rankings =
+                    response.data.Rankings ?? Array.Empty<EntityLeaderboardEntry>();
+                LeaderboardEntry[] entries = new LeaderboardEntry[rankings.Length];
+
+                for (int i = 0; i < rankings.Length; i++)
+                {
+                    EntityLeaderboardEntry ranking = rankings[i];
+                    int.TryParse(ranking.Scores != null && ranking.Scores.Length > 0
+                        ? ranking.Scores[0]
+                        : "0", out int score);
+
+                    entries[i] = new LeaderboardEntry
+                    {
+                        Position = ranking.Rank,
+                        DisplayName = ranking.DisplayName,
+                        StatValue = score
+                    };
+                }
+
+                onSuccess?.Invoke(entries);
             }, onError);
         }
 
         private void Post(
-            string method,
+            string path,
             string json,
-            bool requiresAuthorization,
+            bool requiresEntityToken,
             Action<string> onSuccess,
             Action<PlayFabError> onError)
         {
             _coroutineRunner.StartCoroutine(Send(
-                method,
+                path,
                 json,
-                requiresAuthorization,
+                requiresEntityToken,
                 onSuccess,
                 onError));
         }
 
         private IEnumerator Send(
-            string method,
+            string path,
             string json,
-            bool requiresAuthorization,
+            bool requiresEntityToken,
             Action<string> onSuccess,
             Action<PlayFabError> onError)
         {
-            string url = $"https://{_titleId}.playfabapi.com/Client/{method}";
+            string url = $"https://{_titleId}.playfabapi.com/{path}";
             byte[] body = Encoding.UTF8.GetBytes(json);
 
             using UnityWebRequest request = new UnityWebRequest(url, UnityWebRequest.kHttpVerbPOST)
@@ -109,8 +134,8 @@ namespace FirstChannel
 
             request.SetRequestHeader("Content-Type", "application/json");
 
-            if (requiresAuthorization)
-                request.SetRequestHeader("X-Authorization", _sessionTicket);
+            if (requiresEntityToken)
+                request.SetRequestHeader("X-EntityToken", _entityToken);
 
             yield return request.SendWebRequest();
 
@@ -140,6 +165,7 @@ namespace FirstChannel
             public string TitleId;
             public string CustomId;
             public bool CreateAccount;
+            public bool LoginTitlePlayerAccountEntity;
         }
 
         [Serializable]
@@ -151,7 +177,13 @@ namespace FirstChannel
         [Serializable]
         private sealed class LoginResult
         {
-            public string SessionTicket;
+            public EntityTokenResponse EntityToken;
+        }
+
+        [Serializable]
+        private sealed class EntityTokenResponse
+        {
+            public string EntityToken;
         }
 
         [Serializable]
@@ -169,16 +201,16 @@ namespace FirstChannel
         [Serializable]
         private sealed class StatisticUpdate
         {
-            public string StatisticName;
-            public int Value;
+            public string Name;
+            public string[] Scores;
         }
 
         [Serializable]
         private sealed class LeaderboardRequest
         {
-            public string StatisticName;
-            public int StartPosition;
-            public int MaxResultsCount;
+            public string LeaderboardName;
+            public int StartingPosition;
+            public int PageSize;
         }
 
         [Serializable]
@@ -190,7 +222,15 @@ namespace FirstChannel
         [Serializable]
         private sealed class LeaderboardResult
         {
-            public LeaderboardEntry[] Leaderboard;
+            public EntityLeaderboardEntry[] Rankings;
+        }
+
+        [Serializable]
+        private sealed class EntityLeaderboardEntry
+        {
+            public int Rank;
+            public string DisplayName;
+            public string[] Scores;
         }
     }
 

@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: СЕНСАЦИЯ!
   Description: Огласите главный эксклюзив эфира
-  AddViewers: 25
-  AddEmotionCharacter: -20
+  AddViewers: 1000
+  AddEmotionCharacter: -35
   CardType: 7
   CardId: 20
   AllowedTargets: 1

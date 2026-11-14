@@ -15,8 +15,8 @@ namespace FirstChannel
         private readonly ReplicaListConfig[] _configs;
         private readonly CardHandPresenter _cardHand;
         private readonly ISoundService _sound;
+        private readonly GuestRoster _guestRoster;
         private readonly List<GuestView> _guestViews;
-        private readonly Dictionary<GuestId, Guest> _guests = new Dictionary<GuestId, Guest>();
         private readonly Dictionary<GuestId, GuestView> _views = new Dictionary<GuestId, GuestView>();
 
         private Tween _fallbackTimer;
@@ -33,24 +33,18 @@ namespace FirstChannel
             ReplicaListConfig[] configs,
             CardHandPresenter cardHand,
             ISoundService sound,
+            GuestRoster guestRoster,
             List<GuestView> guestViews)
         {
             _configs = configs;
             _cardHand = cardHand;
             _sound = sound;
+            _guestRoster = guestRoster;
             _guestViews = guestViews;
         }
 
         public void Initialize()
         {
-            for (int i = 0; i < _configs.Length; i++)
-            {
-                ReplicaListConfig config = _configs[i];
-
-                if (config != null && !_guests.ContainsKey(config.GuestId))
-                    _guests.Add(config.GuestId, new Guest(config));
-            }
-
             for (int i = 0; i < _guestViews.Count; i++)
             {
                 GuestView view = _guestViews[i];
@@ -61,7 +55,7 @@ namespace FirstChannel
                 view.HideReplica();
                 _views.Add(view.Id, view);
 
-                if (_guests.TryGetValue(view.Id, out Guest guest))
+                if (_guestRoster.TryGetGuest(view.Id, out Guest guest))
                     view.InitializeEmotion(guest.EmotionBar.CurrentValue);
             }
 
@@ -143,27 +137,27 @@ namespace FirstChannel
             PlayNextIntroduction();
         }
 
-        private void OnCardApplied(Card card, GuestId guestId)
+        private void OnCardApplied(CardPlayResult result)
         {
             if (_isStopped)
                 return;
 
-            if (!_guests.TryGetValue(guestId, out Guest guest) ||
-                !_views.TryGetValue(guestId, out GuestView view))
+            List<GuestId> depletedGuests = ApplyEmotionChanges(result);
+            GuestId dialogueGuestId = result.DialogueGuestId;
+
+            if (!_guestRoster.TryGetGuest(dialogueGuestId, out Guest guest) ||
+                !_views.TryGetValue(dialogueGuestId, out GuestView view))
             {
-                Debug.LogWarning($"Guest '{guestId}' was not configured.");
-                CardReactionCompleted?.Invoke();
+                Debug.LogWarning($"Guest '{dialogueGuestId}' was not configured.");
+                CompleteCardReaction(depletedGuests);
                 return;
             }
 
-            int emotion = guest.ApplyEmotion(card);
-            view.UpdateEmotion(emotion);
-            bool isDepleted = emotion == EmotionBar.MinValue;
-
-            if (!guest.TryGetReplica(card.CardId, out Replica replica))
+            if (!guest.TryGetReplica(result.Card.CardId, out Replica replica))
             {
-                Debug.LogWarning($"Replica for guest '{guestId}' and card '{card.CardId}' was not found.");
-                CompleteCardReaction(guestId, isDepleted);
+                Debug.LogWarning(
+                    $"Replica for guest '{dialogueGuestId}' and card '{result.Card.CardId}' was not found.");
+                CompleteCardReaction(depletedGuests);
                 return;
             }
 
@@ -179,18 +173,18 @@ namespace FirstChannel
             {
                 _sound.PlayVoice(
                     replica.VoiceClip,
-                    () => CompleteDialogue(session, guestId, isDepleted));
+                    () => CompleteDialogue(session, depletedGuests));
                 return;
             }
 
             _fallbackTimer = DOVirtual.DelayedCall(
                     replica.Duration,
-                    () => CompleteDialogue(session, guestId, isDepleted),
+                    () => CompleteDialogue(session, depletedGuests),
                     false)
                 .SetUpdate(true);
         }
 
-        private void CompleteDialogue(int session, GuestId guestId, bool isDepleted)
+        private void CompleteDialogue(int session, List<GuestId> depletedGuests)
         {
             if (_isDisposed || _isStopped || session != _dialogueSession)
                 return;
@@ -200,13 +194,42 @@ namespace FirstChannel
             _activeView = null;
             IsCardReactionPlaying = false;
             _cardHand.SetInteractionEnabled(true);
-            CompleteCardReaction(guestId, isDepleted);
+            CompleteCardReaction(depletedGuests);
         }
 
-        private void CompleteCardReaction(GuestId guestId, bool isDepleted)
+        private List<GuestId> ApplyEmotionChanges(CardPlayResult result)
         {
-            if (isDepleted)
-                GuestEmotionDepleted?.Invoke(guestId);
+            var depletedGuests = new List<GuestId>(2);
+            ApplyEmotionChange(result, GuestId.First, depletedGuests);
+            ApplyEmotionChange(result, GuestId.Second, depletedGuests);
+            return depletedGuests;
+        }
+
+        private void ApplyEmotionChange(
+            CardPlayResult result,
+            GuestId guestId,
+            List<GuestId> depletedGuests)
+        {
+            if (!result.TryGetEmotionChange(guestId, out int change) ||
+                !_guestRoster.TryGetGuest(guestId, out Guest guest))
+            {
+                return;
+            }
+
+            int previousEmotion = guest.EmotionBar.CurrentValue;
+            int emotion = guest.ApplyEmotion(change);
+
+            if (_views.TryGetValue(guestId, out GuestView view))
+                view.UpdateEmotion(emotion);
+
+            if (previousEmotion > EmotionBar.MinValue && emotion == EmotionBar.MinValue)
+                depletedGuests.Add(guestId);
+        }
+
+        private void CompleteCardReaction(List<GuestId> depletedGuests)
+        {
+            for (int i = 0; i < depletedGuests.Count; i++)
+                GuestEmotionDepleted?.Invoke(depletedGuests[i]);
 
             CardReactionCompleted?.Invoke();
         }

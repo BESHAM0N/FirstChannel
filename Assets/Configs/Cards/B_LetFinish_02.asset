@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Дайте договорить!
   Description: Попросите восстановить хронологию
-  AddViewers: 3
-  AddEmotionCharacter: 8
+  AddViewers: 30
+  AddEmotionCharacter: 25
   CardType: 4
   CardId: 13
   AllowedTargets: 2

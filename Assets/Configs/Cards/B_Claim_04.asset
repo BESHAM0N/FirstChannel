@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Претензия
   Description: Спросите, почему гость так долго молчал
-  AddViewers: 5
-  AddEmotionCharacter: -5
+  AddViewers: 220
+  AddEmotionCharacter: -15
   CardType: 0
   CardId: 3
   AllowedTargets: 2

@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Претензия
   Description: Уточните, кто дал гостю такие полномочия
-  AddViewers: 5
-  AddEmotionCharacter: -5
+  AddViewers: 220
+  AddEmotionCharacter: -15
   CardType: 0
   CardId: 2
   AllowedTargets: 2

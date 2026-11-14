@@ -22,6 +22,7 @@ namespace FirstChannel
                 : new[] { _firstGuestUncensoredReplicas, _secondGuestUncensoredReplicas };
 
             Container.Bind<GuestView>().FromComponentsInHierarchy().AsCached();
+            Container.Bind<GuestRoster>().FromInstance(new GuestRoster(replicas)).AsSingle();
 
             Container
                 .BindInterfacesAndSelfTo<GuestDialoguePresenter>()

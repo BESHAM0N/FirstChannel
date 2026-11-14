@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Слёзы
   Description: Подтолкните гостя к раскаянию
-  AddViewers: 7
-  AddEmotionCharacter: -7
+  AddViewers: 25
+  AddEmotionCharacter: -5
   CardType: 2
   CardId: 10
   AllowedTargets: 2

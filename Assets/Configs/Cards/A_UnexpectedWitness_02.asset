@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Неожиданный свидетель
   Description: Подключите бывшего союзника гостя
-  AddViewers: 15
-  AddEmotionCharacter: -12
+  AddViewers: 20
+  AddEmotionCharacter: -5
   CardType: 5
   CardId: 17
   AllowedTargets: 1

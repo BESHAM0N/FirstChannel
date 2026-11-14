@@ -30,9 +30,9 @@ namespace FirstChannel
             return _replicas.TryGetValue(cardId, out replica);
         }
 
-        public int ApplyEmotion(Card card)
+        public int ApplyEmotion(int value)
         {
-            return EmotionBar.Apply(card.AddEmotionCharacter);
+            return EmotionBar.Apply(value);
         }
     }
 }

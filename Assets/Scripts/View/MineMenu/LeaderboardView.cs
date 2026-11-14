@@ -11,8 +11,7 @@ namespace FirstChannel
         private const string PlayerIdPrefsKey = "playfab_player_id";
         private const string PlayerNamePrefsKey = "playfab_player_name";
 
-        [Header("PlayFab")]
-        [SerializeField] private string _titleId;
+        [Header("PlayFab")] [SerializeField] private string _titleId = "1E230E";
 
         [Header("Nickname")]
         [SerializeField] private GameObject _inputNamePanel;

@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Слёзы
   Description: Напомните о семье гостя
-  AddViewers: 7
-  AddEmotionCharacter: -7
+  AddViewers: 25
+  AddEmotionCharacter: -5
   CardType: 2
   CardId: 8
   AllowedTargets: 1

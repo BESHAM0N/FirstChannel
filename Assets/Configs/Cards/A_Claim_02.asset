@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Претензия
   Description: Потребуйте объяснить исчезновение денег
-  AddViewers: 5
-  AddEmotionCharacter: -5
+  AddViewers: 220
+  AddEmotionCharacter: -15
   CardType: 0
   CardId: 1
   AllowedTargets: 1

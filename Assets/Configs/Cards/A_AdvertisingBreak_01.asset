@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Рекламная пауза
   Description: Сделайте короткую рекламную паузу
-  AddViewers: 5
-  AddEmotionCharacter: 10
+  AddViewers: 0
+  AddEmotionCharacter: 20
   CardType: 6
   CardId: 18
   AllowedTargets: 1

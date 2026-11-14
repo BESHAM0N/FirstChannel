@@ -68,9 +68,9 @@ namespace FirstChannel
             IsRunning = isRunning;
         }
 
-        private void OnCardApplied(Card card, GuestId guestId)
+        private void OnCardApplied(CardPlayResult result)
         {
-            _viewers.Add(card.AddViewers);
+            _viewers.Add(result.AddedViewers);
         }
 
         private void OnViewersChanged(int total, int added)

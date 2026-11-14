@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Дайте договорить!
   Description: Передайте гостю последнее слово
-  AddViewers: 3
-  AddEmotionCharacter: 8
+  AddViewers: 30
+  AddEmotionCharacter: 25
   CardType: 4
   CardId: 15
   AllowedTargets: 1

@@ -15,8 +15,8 @@ MonoBehaviour:
   Image: {fileID: 0}
   Name: Компромат
   Description: Покажите запись закрытого разговора
-  AddViewers: 10
-  AddEmotionCharacter: -10
+  AddViewers: 450
+  AddEmotionCharacter: -30
   CardType: 1
   CardId: 4
   AllowedTargets: 1
