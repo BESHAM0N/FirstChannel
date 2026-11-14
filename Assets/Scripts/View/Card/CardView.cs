@@ -19,6 +19,7 @@ namespace FirstChannel
         public event Action<CardView, GuestView> DropRequested;
         public event Action<CardView> Hovered;
         public event Action<CardView> Clicked;
+        public event Action<CardView> Released;
         public event Action<CardView> DealStarted;
 
         [SerializeField] private Image _image;
@@ -35,6 +36,7 @@ namespace FirstChannel
         [SerializeField, Range(0.1f, 1f)] private float _dealStartScale = 0.78f;
 
         private const float HoverOffset = 70f;
+        private const float HoverRaycastSafety = 20f;
         private const float HoverScale = 1.08f;
         private const float HoverDuration = 0.18f;
         private const float ReturnDuration = 0.25f;
@@ -51,9 +53,11 @@ namespace FirstChannel
         private bool _isDragging;
         private bool _isConsumed;
         private bool _isDealing;
+        private bool _isHovered;
         private bool _isInteractionEnabled = true;
         private Sprite _frontSprite;
         private Color _frontColor;
+        private Vector4 _defaultRaycastPadding;
 
         public void SetCard(
             Sprite sprite,
@@ -130,6 +134,7 @@ namespace FirstChannel
 
             if (!enabled && !_isDragging && !_isDealing && _homeParent != null)
             {
+                SetHovered(false);
                 _rectTransform.SetSiblingIndex(_homeSiblingIndex);
                 AnimateToHome(HoverDuration);
             }
@@ -162,9 +167,10 @@ namespace FirstChannel
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (!_isInteractionEnabled || _isDragging || _isConsumed || _homeParent == null)
+            if (!_isInteractionEnabled || _isDragging || _isConsumed || _homeParent == null || _isHovered)
                 return;
 
+            SetHovered(true);
             Hovered?.Invoke(this);
             KillMotion();
             _rectTransform.SetAsLastSibling();
@@ -195,6 +201,7 @@ namespace FirstChannel
             if (!_isInteractionEnabled || _isDragging || _isConsumed)
                 return;
 
+            SetHovered(false);
             _rectTransform.SetSiblingIndex(_homeSiblingIndex);
             AnimateToHome(HoverDuration);
         }
@@ -204,6 +211,7 @@ namespace FirstChannel
             if (!_isInteractionEnabled || _isConsumed)
                 return;
 
+            SetHovered(false);
             _isDragging = true;
             _canvasGroup.blocksRaycasts = false;
             KillMotion();
@@ -238,6 +246,7 @@ namespace FirstChannel
 
             _isDragging = false;
             _canvasGroup.blocksRaycasts = true;
+            Released?.Invoke(this);
 
             GuestView target = eventData.pointerCurrentRaycast.gameObject != null
                 ? eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<GuestView>()
@@ -257,6 +266,7 @@ namespace FirstChannel
             _rectTransform = (RectTransform)transform;
             _canvasGroup = GetComponent<CanvasGroup>();
             _frontColor = _image.color;
+            _defaultRaycastPadding = _image.raycastPadding;
 
             if (_canvasGroup == null)
                 _canvasGroup = gameObject.AddComponent<CanvasGroup>();
@@ -342,6 +352,18 @@ namespace FirstChannel
             _description.gameObject.SetActive(isActive);
             _emotionValue.gameObject.SetActive(isActive);
             _viewersValue.gameObject.SetActive(isActive);
+        }
+
+        private void SetHovered(bool isHovered)
+        {
+            _isHovered = isHovered;
+
+            Vector4 padding = _defaultRaycastPadding;
+
+            if (isHovered)
+                padding.y -= HoverOffset + HoverRaycastSafety;
+
+            _image.raycastPadding = padding;
         }
 
         private void KillMotion()

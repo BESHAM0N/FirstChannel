@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace FirstChannel
 {
@@ -11,6 +12,13 @@ namespace FirstChannel
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _exitButton;
         [SerializeField] private Button _authorsButton;
+
+        [Inject] private ISoundService _soundService;
+
+        private void Start()
+        {
+            _soundService.PlayLoop(SoundType.MainMenuBackgroundMusic);
+        }
 
         private void OnEnable()
         {

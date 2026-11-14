@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FirstChannel.SoundConfig
   Config:
   - SourceType: 0
+    SoundType: 0
+    AudioClip: {fileID: 8300000, guid: 06ddb112b4d2c32438c011aa94631764, type: 3}
+  - SourceType: 0
     SoundType: 1
-    AudioClip: {fileID: 8300000, guid: 4622e3f2900a6fb43b2ece4c0c5fecd1, type: 3}
+    AudioClip: {fileID: 8300000, guid: a906ed44a98c9fa4596945b21ef2dbaf, type: 3}
   - SourceType: 1
     SoundType: 14
     AudioClip: {fileID: 8300000, guid: 5a533c237d0453c41987e3d541334d46, type: 3}
@@ -70,3 +73,6 @@ MonoBehaviour:
   - SourceType: 1
     SoundType: 24
     AudioClip: {fileID: 8300000, guid: 47881873c4673264791e0e54787e98b7, type: 3}
+  - SourceType: 1
+    SoundType: 25
+    AudioClip: {fileID: 8300000, guid: e0a505efe407bea439959fbdda3f128f, type: 3}

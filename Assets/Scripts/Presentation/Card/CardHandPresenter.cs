@@ -171,6 +171,7 @@ namespace FirstChannel
             view.DropRequested += OnDropRequested;
             view.Hovered += OnCardHovered;
             view.Clicked += OnCardClicked;
+            view.Released += OnCardClicked;
             view.DealStarted += OnCardDealStarted;
         }
 
@@ -179,6 +180,7 @@ namespace FirstChannel
             view.DropRequested -= OnDropRequested;
             view.Hovered -= OnCardHovered;
             view.Clicked -= OnCardClicked;
+            view.Released -= OnCardClicked;
             view.DealStarted -= OnCardDealStarted;
         }
 

@@ -18,6 +18,7 @@ namespace FirstChannel
         [SerializeField] private TMP_Text _textViewersValue;
         [SerializeField] private Button _mainMenuButton;
         [SerializeField] private Button _newGameButton;
+        [SerializeField] private GameObject _newRecordText;
 
         [Inject] private ISoundService _soundService;
 
@@ -38,7 +39,7 @@ namespace FirstChannel
             Hide();
         }
 
-        public void Show(int viewers)
+        public void Show(int viewers, bool isNewRecord)
         {
             KillCounterTween();
 
@@ -47,7 +48,11 @@ namespace FirstChannel
             _nextCounterSoundTime = Time.unscaledTime;
 
             SetViewersText(0);
+            _newRecordText.SetActive(isNewRecord);
             gameObject.SetActive(true);
+
+            if (isNewRecord)
+                _soundService.Play(SoundType.NewRecord);
 
             _counterTween = DOVirtual.Int(0, _targetViewers, CounterDuration, UpdateCounter)
                 .SetEase(Ease.InCubic)

@@ -149,14 +149,17 @@ namespace FirstChannel
             _isFinished = true;
 
             int result = _viewers.Current;
+            int previousBest = PlayerPrefs.GetInt(BestViewersPrefsKey, 0);
+            bool isNewRecord = result > previousBest;
+
             PlayerPrefs.SetInt(LastViewersPrefsKey, result);
             PlayerPrefs.SetInt(
                 BestViewersPrefsKey,
-                Mathf.Max(result, PlayerPrefs.GetInt(BestViewersPrefsKey, 0)));
+                Mathf.Max(result, previousBest));
             PlayerPrefs.Save();
 
             _sound.PlayLoop(SoundType.GameOverBackgroundMusic);
-            _gameOverView.Show(result);
+            _gameOverView.Show(result, isNewRecord);
         }
 
         private void RestartGame()

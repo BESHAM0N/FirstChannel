@@ -26,6 +26,7 @@
         TakeCard_2,
         TakeCard_3,
         TakeCard_4,
-        CounterFull
+        CounterFull,
+        NewRecord
     }
 }

@@ -1,0 +1,1326 @@
+fileFormatVersion: 2
+guid: ea9f0b7f2b0d276468945f106281e104
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3887322760428295798
+    second: PointSlider_0
+  - first:
+      213: -3553817085493194784
+    second: PointSlider_1
+  - first:
+      213: -6991348037268054121
+    second: PointSlider_2
+  - first:
+      213: -6113907717246336258
+    second: PointSlider_3
+  - first:
+      213: 1568055996224977963
+    second: PointSlider_4
+  - first:
+      213: 4706929808966382414
+    second: PointSlider_5
+  - first:
+      213: -8406941643765114767
+    second: PointSlider_6
+  - first:
+      213: 6986721055752546544
+    second: PointSlider_7
+  - first:
+      213: -6389817027400633758
+    second: PointSlider_8
+  - first:
+      213: 6128704762276189959
+    second: PointSlider_9
+  - first:
+      213: 7394878115042944736
+    second: PointSlider_10
+  - first:
+      213: -567247099921243930
+    second: PointSlider_11
+  - first:
+      213: -8808506844702397118
+    second: PointSlider_12
+  - first:
+      213: -59228000416819742
+    second: PointSlider_13
+  - first:
+      213: 2778357065356212978
+    second: PointSlider_14
+  - first:
+      213: -6446390995922816067
+    second: PointSlider_15
+  - first:
+      213: -3516225509631808019
+    second: PointSlider_16
+  - first:
+      213: 3393813571550338961
+    second: PointSlider_17
+  - first:
+      213: 6974846435332172568
+    second: PointSlider_18
+  - first:
+      213: 3313141524373467676
+    second: PointSlider_19
+  - first:
+      213: 1675561880755789140
+    second: PointSlider_20
+  - first:
+      213: -6296990225770608018
+    second: PointSlider_21
+  - first:
+      213: -2108222261424665315
+    second: PointSlider_22
+  - first:
+      213: 4735797779577274161
+    second: PointSlider_23
+  - first:
+      213: 4245879214134391422
+    second: PointSlider_24
+  - first:
+      213: 3631660358493469644
+    second: PointSlider_25
+  - first:
+      213: -6985899671145095851
+    second: PointSlider_26
+  - first:
+      213: 2179108268932713372
+    second: PointSlider_27
+  - first:
+      213: 2747175184763098952
+    second: PointSlider_28
+  - first:
+      213: -3451961314620968150
+    second: PointSlider_29
+  - first:
+      213: -4631889053488084082
+    second: PointSlider_30
+  - first:
+      213: -4764694239417030687
+    second: PointSlider_31
+  - first:
+      213: -3239989116765945952
+    second: PointSlider_32
+  - first:
+      213: 1464880788093973887
+    second: PointSlider_33
+  - first:
+      213: 723054007339093693
+    second: PointSlider_34
+  - first:
+      213: -2771637641600760871
+    second: PointSlider_35
+  - first:
+      213: -5997281343719881261
+    second: PointSlider_36
+  - first:
+      213: -9164072619862240688
+    second: PointSlider_37
+  - first:
+      213: 6840371758124573082
+    second: PointSlider_38
+  - first:
+      213: -9089973828882912842
+    second: PointSlider_39
+  - first:
+      213: -6770478579553381679
+    second: PointSlider_40
+  - first:
+      213: -7664074679336267915
+    second: PointSlider_41
+  - first:
+      213: 2878157491123808877
+    second: PointSlider_42
+  - first:
+      213: 928683728751082794
+    second: PointSlider_43
+  - first:
+      213: 5190038565782510613
+    second: PointSlider_44
+  - first:
+      213: 4314370202176045664
+    second: PointSlider_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PointSlider_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 554
+        width: 236
+        height: 622
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8961699b847d0ac0800000000000000
+      internalID: -3887322760428295798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_1
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 0
+        width: 801
+        height: 1049
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0efc67e803e4eaec0800000000000000
+      internalID: -3553817085493194784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_2
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 947
+        width: 206
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f5389700eb9fe90800000000000000
+      internalID: -6991348037268054121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_3
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1070
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef24304f259072ba0800000000000000
+      internalID: -6113907717246336258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_4
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1158
+        width: 29
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2c39e2ee9ad2c510800000000000000
+      internalID: 1568055996224977963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_5
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 1054
+        width: 200
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43732e09bf525140800000000000000
+      internalID: 4706929808966382414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_6
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1159
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17811fbed1b845b80800000000000000
+      internalID: -8406941643765114767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_7
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 1092
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f86fd078c1d5f060800000000000000
+      internalID: 6986721055752546544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_8
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1051
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 262fa0ea44fc257a0800000000000000
+      internalID: -6389817027400633758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_9
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 1080
+        width: 146
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70797b092888d0550800000000000000
+      internalID: 6128704762276189959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_10
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 119
+        width: 383
+        height: 1099
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6e1744772ef9660800000000000000
+      internalID: 7394878115042944736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_11
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 1140
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e0e25d94cbb028f0800000000000000
+      internalID: -567247099921243930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_12
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 1090
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24daae7b1b5e1c580800000000000000
+      internalID: -8808506844702397118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_13
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 1034
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e5166a82749d2ff0800000000000000
+      internalID: -59228000416819742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_14
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 1050
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2faf0c3d705be8620800000000000000
+      internalID: 2778357065356212978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_15
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 1000
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db37ebc2b81d986a0800000000000000
+      internalID: -6446390995922816067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_16
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1036
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dedaa3c578bd33fc0800000000000000
+      internalID: -3516225509631808019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_17
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 1046
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f582e467f391f20800000000000000
+      internalID: 3393813571550338961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_18
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 996
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81bafdce0e1abc060800000000000000
+      internalID: 6974846435332172568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_19
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 899
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1270e2a9a4aafd20800000000000000
+      internalID: 3313141524373467676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_20
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 883
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d52ad27aac04710800000000000000
+      internalID: 1675561880755789140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_21
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 807
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6a06d6a0c89c98a0800000000000000
+      internalID: -6296990225770608018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_22
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 778
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d4638e5071eb2e0800000000000000
+      internalID: -2108222261424665315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_23
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 777
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13f79cb3dfee8b140800000000000000
+      internalID: 4735797779577274161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_24
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 771
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72f1bd46a46cea30800000000000000
+      internalID: 4245879214134391422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_25
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 730
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccbfedccadf366230800000000000000
+      internalID: 3631660358493469644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_26
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 735
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55dd0e013491d0f90800000000000000
+      internalID: -6985899671145095851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_27
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 728
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9bc9d8dc6fbd3e10800000000000000
+      internalID: 2179108268932713372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_28
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 705
+        width: 34
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 847929f764def1620800000000000000
+      internalID: 2747175184763098952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_29
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 716
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2370af397b2810d0800000000000000
+      internalID: -3451961314620968150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_30
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 572
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b82d7527938bfb0800000000000000
+      internalID: -4631889053488084082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 57
+        width: 194
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e7a23c65d760edb0800000000000000
+      internalID: -4764694239417030687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_32
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 94
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0afb803801f3903d0800000000000000
+      internalID: -3239989116765945952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_33
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 296
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75b2a4c05d445410800000000000000
+      internalID: 1464880788093973887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_34
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 168
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe8edce9cdc80a00800000000000000
+      internalID: 723054007339093693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_35
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 178
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d3094eef3a2989d0800000000000000
+      internalID: -2771637641600760871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_36
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 200
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d5cf71946065cca0800000000000000
+      internalID: -5997281343719881261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_37
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 182
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0525a3d618ca2d080800000000000000
+      internalID: -9164072619862240688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_38
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 117
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9121a64fd1edee50800000000000000
+      internalID: 6840371758124573082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_39
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 218
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b926df96fce9d180800000000000000
+      internalID: -9089973828882912842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_40
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 190
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d2545a7a9d6a02a0800000000000000
+      internalID: -6770478579553381679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_41
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 170
+        width: 99
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f88166facb3a590800000000000000
+      internalID: -7664074679336267915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_42
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 53
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a60123df441f720800000000000000
+      internalID: 2878157491123808877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_43
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 312
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2db4e05ee853ec00800000000000000
+      internalID: 928683728751082794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_44
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 0
+        width: 132
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51c5b0cd398b60840800000000000000
+      internalID: 5190038565782510613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PointSlider_45
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 85
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 062cb3227d8bfdb30800000000000000
+      internalID: 4314370202176045664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PointSlider_0: -3887322760428295798
+      PointSlider_1: -3553817085493194784
+      PointSlider_10: 7394878115042944736
+      PointSlider_11: -567247099921243930
+      PointSlider_12: -8808506844702397118
+      PointSlider_13: -59228000416819742
+      PointSlider_14: 2778357065356212978
+      PointSlider_15: -6446390995922816067
+      PointSlider_16: -3516225509631808019
+      PointSlider_17: 3393813571550338961
+      PointSlider_18: 6974846435332172568
+      PointSlider_19: 3313141524373467676
+      PointSlider_2: -6991348037268054121
+      PointSlider_20: 1675561880755789140
+      PointSlider_21: -6296990225770608018
+      PointSlider_22: -2108222261424665315
+      PointSlider_23: 4735797779577274161
+      PointSlider_24: 4245879214134391422
+      PointSlider_25: 3631660358493469644
+      PointSlider_26: -6985899671145095851
+      PointSlider_27: 2179108268932713372
+      PointSlider_28: 2747175184763098952
+      PointSlider_29: -3451961314620968150
+      PointSlider_3: -6113907717246336258
+      PointSlider_30: -4631889053488084082
+      PointSlider_31: -4764694239417030687
+      PointSlider_32: -3239989116765945952
+      PointSlider_33: 1464880788093973887
+      PointSlider_34: 723054007339093693
+      PointSlider_35: -2771637641600760871
+      PointSlider_36: -5997281343719881261
+      PointSlider_37: -9164072619862240688
+      PointSlider_38: 6840371758124573082
+      PointSlider_39: -9089973828882912842
+      PointSlider_4: 1568055996224977963
+      PointSlider_40: -6770478579553381679
+      PointSlider_41: -7664074679336267915
+      PointSlider_42: 2878157491123808877
+      PointSlider_43: 928683728751082794
+      PointSlider_44: 5190038565782510613
+      PointSlider_45: 4314370202176045664
+      PointSlider_5: 4706929808966382414
+      PointSlider_6: -8406941643765114767
+      PointSlider_7: 6986721055752546544
+      PointSlider_8: -6389817027400633758
+      PointSlider_9: 6128704762276189959
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
