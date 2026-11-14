@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 42546c556f5b85a4ea596251b24c239b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9023810679493550142
+    second: new_fire_anim_0
+  - first:
+      213: 4364826917833517129
+    second: new_fire_anim_1
+  - first:
+      213: -7860855630614137074
+    second: new_fire_anim_2
+  - first:
+      213: -3088294252460252725
+    second: new_fire_anim_3
+  - first:
+      213: -1150074239738440079
+    second: new_fire_anim_4
+  - first:
+      213: 8844552697445525115
+    second: new_fire_anim_5
+  - first:
+      213: 3386868439625126502
+    second: new_fire_anim_6
+  - first:
+      213: 4001388085976190006
+    second: new_fire_anim_7
+  - first:
+      213: -9106330090010271386
+    second: new_fire_anim_8
+  - first:
+      213: 4735947603447811049
+    second: new_fire_anim_9
+  - first:
+      213: 5025443164309502723
+    second: new_fire_anim_10
+  - first:
+      213: -5683261282582396769
+    second: new_fire_anim_11
+  - first:
+      213: -670568856183360567
+    second: new_fire_anim_12
+  - first:
+      213: 7801143319042087481
+    second: new_fire_anim_13
+  - first:
+      213: -7860192543812799258
+    second: new_fire_anim_14
+  - first:
+      213: -6972009190135974329
+    second: new_fire_anim_15
+  - first:
+      213: -6484927029903693472
+    second: new_fire_anim_16
+  - first:
+      213: -7506073272374878021
+    second: new_fire_anim_17
+  - first:
+      213: 291493708592140374
+    second: new_fire_anim_18
+  - first:
+      213: -3474739292084709443
+    second: new_fire_anim_19
+  - first:
+      213: 2931910944446671815
+    second: new_fire_anim_20
+  - first:
+      213: -3764649280844614672
+    second: new_fire_anim_21
+  - first:
+      213: -7254245747198762517
+    second: new_fire_anim_22
+  - first:
+      213: -5828995788972460787
+    second: new_fire_anim_23
+  - first:
+      213: 1680257868942347989
+    second: new_fire_anim_24
+  - first:
+      213: -5951985673888790503
+    second: new_fire_anim_25
+  - first:
+      213: 1319640562744375956
+    second: new_fire_anim_26
+  - first:
+      213: 1754128061356348982
+    second: new_fire_anim_27
+  - first:
+      213: -2275029159575930438
+    second: new_fire_anim_28
+  - first:
+      213: -4051289732200401886
+    second: new_fire_anim_29
+  - first:
+      213: -2962089764007600271
+    second: new_fire_anim_30
+  - first:
+      213: 116426689045475935
+    second: new_fire_anim_31
+  - first:
+      213: -406766414078598030
+    second: new_fire_anim_32
+  - first:
+      213: -8387774364162266909
+    second: new_fire_anim_33
+  - first:
+      213: 7990024541674307994
+    second: new_fire_anim_34
+  - first:
+      213: -4753826597368758609
+    second: new_fire_anim_35
+  - first:
+      213: -8311228644569445240
+    second: new_fire_anim_36
+  - first:
+      213: -3693925513540997121
+    second: new_fire_anim_37
+  - first:
+      213: -509736517686914852
+    second: new_fire_anim_38
+  - first:
+      213: -8286211456347713521
+    second: new_fire_anim_39
+  - first:
+      213: 3180199495627421905
+    second: new_fire_anim_40
+  - first:
+      213: -6918291995928017274
+    second: new_fire_anim_41
+  - first:
+      213: -3543087026093321144
+    second: new_fire_anim_42
+  - first:
+      213: 3245842237992203556
+    second: new_fire_anim_43
+  - first:
+      213: -6202542102242657427
+    second: new_fire_anim_44
+  - first:
+      213: -2873363647714848523
+    second: new_fire_anim_45
+  - first:
+      213: -7603024135946332763
+    second: new_fire_anim_46
+  - first:
+      213: 3608227089316146044
+    second: new_fire_anim_47
+  - first:
+      213: -8330156928552349553
+    second: new_fire_anim_48
+  - first:
+      213: -3996054470883438529
+    second: new_fire_anim_49
+  - first:
+      213: 8070751185293581226
+    second: new_fire_anim_50
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: new_fire_anim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 543
+        height: 549
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf19684ffbf4c280800000000000000
+      internalID: -9023810679493550142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new_fire_anim_1
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 0
+        width: 543
+        height: 549
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 948a787b4faf29c30800000000000000
+      internalID: 4364826917833517129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new_fire_anim_2
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 0
+        width: 543
+        height: 549
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e077d9ad371a8e290800000000000000
+      internalID: -7860855630614137074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: new_fire_anim_3
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 0
+        width: 543
+        height: 549
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc1e9386dbc2425d0800000000000000
+      internalID: -3088294252460252725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 40f87d0517c6ce641a78bca2105a2a7d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":543.0,"y":549.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      new_fire_anim_0: -9023810679493550142
+      new_fire_anim_1: 4364826917833517129
+      new_fire_anim_2: -7860855630614137074
+      new_fire_anim_3: -3088294252460252725
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
