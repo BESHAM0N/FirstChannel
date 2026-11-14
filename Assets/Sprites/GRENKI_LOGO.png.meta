@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 4702003b7cc50a343bd8af2165a6c48d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5905757538798309167
+    second: GRENKI_LOGO_0
+  - first:
+      213: -1257032591294895924
+    second: GRENKI_LOGO_1
+  - first:
+      213: 766346917900565586
+    second: GRENKI_LOGO_2
+  - first:
+      213: 6800281825311681452
+    second: GRENKI_LOGO_3
+  - first:
+      213: 794733092900322636
+    second: GRENKI_LOGO_4
+  - first:
+      213: -1681026411977590927
+    second: GRENKI_LOGO_5
+  - first:
+      213: -8648756840006047338
+    second: GRENKI_LOGO_6
+  - first:
+      213: -8597143504562646003
+    second: GRENKI_LOGO_7
+  - first:
+      213: -8893555366794009297
+    second: GRENKI_LOGO_8
+  - first:
+      213: 7494046976164895811
+    second: GRENKI_LOGO_9
+  - first:
+      213: -1203099188119074656
+    second: GRENKI_LOGO_10
+  - first:
+      213: -1457029297578750923
+    second: GRENKI_LOGO_11
+  - first:
+      213: 3652684715015167559
+    second: GRENKI_LOGO_12
+  - first:
+      213: -1915394346454792869
+    second: GRENKI_LOGO_13
+  - first:
+      213: -1033615061725047515
+    second: GRENKI_LOGO_14
+  - first:
+      213: 6395672217197341255
+    second: GRENKI_LOGO_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GRENKI_LOGO_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 11
+        width: 973
+        height: 908
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f88a5013775f150800000000000000
+      internalID: 5905757538798309167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_1
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 209
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc867cca48f1e8ee0800000000000000
+      internalID: -1257032591294895924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_2
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 174
+        width: 51
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25cbd28267c92aa00800000000000000
+      internalID: 766346917900565586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_3
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 35
+        width: 35
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cab6f3a6a447f5e50800000000000000
+      internalID: 6800281825311681452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_4
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 28
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d329d8985770b00800000000000000
+      internalID: 794733092900322636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_5
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 25
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 177b600826bcba8e0800000000000000
+      internalID: -1681026411977590927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_6
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 29
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 699a5b22a7179f780800000000000000
+      internalID: -8648756840006047338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_7
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 26
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d049c7f388fc0b880800000000000000
+      internalID: -8597143504562646003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_8
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 27
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2569f3938eb39480800000000000000
+      internalID: -8893555366794009297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_9
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 27
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c16680504300860800000000000000
+      internalID: 7494046976164895811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_10
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 29
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a80a96a9abbd4fe0800000000000000
+      internalID: -1203099188119074656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_11
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 26
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c4b72d29797cbe0800000000000000
+      internalID: -1457029297578750923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_12
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 28
+        width: 21
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74e5af24561f0b230800000000000000
+      internalID: 3652684715015167559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_13
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 27
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5545c67df62b65e0800000000000000
+      internalID: -1915394346454792869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_14
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 27
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5259263e39cd7a1f0800000000000000
+      internalID: -1033615061725047515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GRENKI_LOGO_15
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 34
+        width: 38
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ae1edeefdf1c850800000000000000
+      internalID: 6395672217197341255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GRENKI_LOGO_0: 5905757538798309167
+      GRENKI_LOGO_1: -1257032591294895924
+      GRENKI_LOGO_10: -1203099188119074656
+      GRENKI_LOGO_11: -1457029297578750923
+      GRENKI_LOGO_12: 3652684715015167559
+      GRENKI_LOGO_13: -1915394346454792869
+      GRENKI_LOGO_14: -1033615061725047515
+      GRENKI_LOGO_15: 6395672217197341255
+      GRENKI_LOGO_2: 766346917900565586
+      GRENKI_LOGO_3: 6800281825311681452
+      GRENKI_LOGO_4: 794733092900322636
+      GRENKI_LOGO_5: -1681026411977590927
+      GRENKI_LOGO_6: -8648756840006047338
+      GRENKI_LOGO_7: -8597143504562646003
+      GRENKI_LOGO_8: -8893555366794009297
+      GRENKI_LOGO_9: 7494046976164895811
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0fb3429c6a4ed6af6755bf18cce450, type: 3}
+  m_Name: SecondGuestReplicas
+  m_EditorClassIdentifier: Assembly-CSharp::FirstChannel.ReplicaListConfig
+  GuestId: 1
+  IntroReplica:
+    CardId: 0
+    Text: 'А я надеюсь, сегодня прозвучат факты, а не очередные обвинения.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2.5
+  Replicas:
+  - CardId: 0
+    Text: 'Факты вы искажаете намеренно.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 1
+    Text: 'Все расходы давно отражены в отчётах.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 2
+    Text: 'Мои решения были согласованы руководством.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 3
+    Text: 'Я ждал подходящего момента, чтобы рассказать правду.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 4
+    Text: 'На записи нет ничего противозаконного.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 5
+    Text: 'Вы читаете только удобную вам часть переписки.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 6
+    Text: 'Фотография сделана задолго до этих событий.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 7
+    Text: 'Документ поддельный, и экспертиза это подтвердит.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 8
+    Text: 'Моя семья не имеет отношения к вашему расследованию.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 9
+    Text: 'Вы даже не представляете, через что мне пришлось пройти.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 10
+    Text: 'Я сделал всё, что мог, и всё равно виноват.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 11
+    Text: 'Да, это правда, но всё было совсем не так.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 12
+    Text: 'Если позволите, я отвечу без перебиваний.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 13
+    Text: 'Сначала было решение, а уже потом последствия.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 14
+    Text: 'Моя версия подтверждается свидетелями.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 15
+    Text: 'Я сказал всё, что должен был сказать.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 16
+    Text: 'Этот свидетель никогда не присутствовал при разговоре.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 17
+    Text: 'Бывший союзник просто сводит со мной счёты.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 18
+    Text: 'Пауза сейчас действительно всем не помешает.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 19
+    Text: 'Вашим спонсорам понравится такой скандал.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 20
+    Text: 'Если это правда, сегодняшний эфир всё изменит.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+

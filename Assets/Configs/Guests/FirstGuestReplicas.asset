@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0fb3429c6a4ed6af6755bf18cce450, type: 3}
+  m_Name: FirstGuestReplicas
+  m_EditorClassIdentifier: Assembly-CSharp::FirstChannel.ReplicaListConfig
+  GuestId: 0
+  IntroReplica:
+    CardId: 0
+    Text: 'Прежде чем мы начнём, я хочу сразу сказать: мне есть что рассказать.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2.5
+  Replicas:
+  - CardId: 0
+    Text: 'Я ничего не скрывал, вы неверно всё поняли.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 1
+    Text: 'Деньги были потрачены по назначению.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 2
+    Text: 'Эти полномочия мне дали совершенно законно.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 3
+    Text: 'Я молчал, потому что не хотел раздувать скандал.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 4
+    Text: 'Эта запись смонтирована и вырвана из контекста.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 5
+    Text: 'Переписка личная, вы не имели права её публиковать.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 6
+    Text: 'По одной фотографии нельзя делать такие выводы.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 7
+    Text: 'Этот документ ещё ничего не доказывает.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 8
+    Text: 'Не втягивайте мою семью в этот разговор.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 9
+    Text: 'Со мной поступили несправедливо, и вы это знаете.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 10
+    Text: 'Да, я жалею о том, что произошло.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 11
+    Text: 'Хорошо, я признаю: это была моя ошибка.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 12
+    Text: 'Наконец-то вы дали мне возможность объясниться.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 13
+    Text: 'Давайте восстановим события по порядку.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 14
+    Text: 'Теперь выслушайте мою версию до конца.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 15
+    Text: 'И последнее: я не отказываюсь от своих слов.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 16
+    Text: 'Я впервые вижу этого человека.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 17
+    Text: 'Он говорит так, потому что хочет мне отомстить.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 18
+    Text: 'Хорошо, продолжим после короткой паузы.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 19
+    Text: 'Надеюсь, после рекламы вы смените этот тон.'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+  - CardId: 20
+    Text: 'Этого не может быть. Откуда у вас эта информация?'
+    VoiceClip: {fileID: 0}
+    FallbackDuration: 2
+
