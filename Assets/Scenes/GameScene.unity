@@ -1869,8 +1869,10 @@ MonoBehaviour:
   _soundInstaller:
     _config: {fileID: 11400000, guid: aeb566bc2f2f4ac7bf6ce2ef3a66fb43, type: 2}
   _guestInstaller:
-    _firstGuestReplicas: {fileID: 11400000, guid: e5f0c80a65794af68cd5d0782ec4fa15, type: 2}
-    _secondGuestReplicas: {fileID: 11400000, guid: f494c8c9dc3248b2bcb971cd719e5fac, type: 2}
+    _firstGuestCensoredReplicas: {fileID: 11400000, guid: e5f0c80a65794af68cd5d0782ec4fa15, type: 2}
+    _secondGuestCensoredReplicas: {fileID: 11400000, guid: f494c8c9dc3248b2bcb971cd719e5fac, type: 2}
+    _firstGuestUncensoredReplicas: {fileID: 11400000, guid: 8f257486b9ab4d748666a9d9fe09f199, type: 2}
+    _secondGuestUncensoredReplicas: {fileID: 11400000, guid: 197f724a2e68415894784a714fbc8959, type: 2}
   _viewersInstaller:
     _view: {fileID: 157875152}
     _minViewersPerTick: 1

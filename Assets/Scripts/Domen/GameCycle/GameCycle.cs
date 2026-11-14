@@ -8,6 +8,7 @@ namespace FirstChannel
     public sealed class GameCycle : IInitializable, ILateTickable, IDisposable
     {
         public const string LastViewersPrefsKey = "last_viewers_count";
+        public const string BestViewersPrefsKey = "best_viewers_count";
 
         private readonly Timeline _timeline;
         private readonly TimelinePresenter _timelinePresenter;
@@ -149,6 +150,9 @@ namespace FirstChannel
 
             int result = _viewers.Current;
             PlayerPrefs.SetInt(LastViewersPrefsKey, result);
+            PlayerPrefs.SetInt(
+                BestViewersPrefsKey,
+                Mathf.Max(result, PlayerPrefs.GetInt(BestViewersPrefsKey, 0)));
             PlayerPrefs.Save();
 
             _sound.PlayLoop(SoundType.GameOverBackgroundMusic);
