@@ -6,12 +6,15 @@ namespace FirstChannel
 {
     public sealed class ViewersCountPresenter : IInitializable, ITickable, IDisposable
     {
+        private const int SoundInterval = 500;
+
         private readonly int _minViewersPerTick;
         private readonly int _maxViewersPerTick;
         private readonly float _tickInterval;
         private readonly ViewersCount _viewers;
         private readonly ViewersCountView _view;
         private readonly CardHandPresenter _cardHand;
+        private readonly ISoundService _sound;
 
         private float _elapsedTime;
 
@@ -23,7 +26,8 @@ namespace FirstChannel
             float tickInterval,
             ViewersCount viewers,
             ViewersCountView view,
-            CardHandPresenter cardHand)
+            CardHandPresenter cardHand,
+            ISoundService sound)
         {
             _minViewersPerTick = Mathf.Max(0, minViewersPerTick);
             _maxViewersPerTick = Mathf.Max(_minViewersPerTick, maxViewersPerTick);
@@ -31,6 +35,7 @@ namespace FirstChannel
             _viewers = viewers;
             _view = view;
             _cardHand = cardHand;
+            _sound = sound;
         }
 
         public void Initialize()
@@ -66,6 +71,12 @@ namespace FirstChannel
         public void SetRunning(bool isRunning)
         {
             IsRunning = isRunning;
+
+            if (!isRunning)
+            {
+                _elapsedTime = 0f;
+                _view.StopAnimations(_viewers.Current);
+            }
         }
 
         private void OnCardApplied(CardPlayResult result)
@@ -75,6 +86,9 @@ namespace FirstChannel
 
         private void OnViewersChanged(int total, int added)
         {
+            if (added > 0 && total / SoundInterval > (total - added) / SoundInterval)
+                _sound.Play(SoundType.AddViewers);
+
             _view.UpdateTotal(total);
             _view.ShowAddedViewers(added);
         }

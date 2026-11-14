@@ -9,7 +9,7 @@ namespace FirstChannel
     public sealed class LeaderboardView : MonoBehaviour
     {
         private const string PlayerIdPrefsKey = "playfab_player_id";
-        private const string PlayerNamePrefsKey = "playfab_player_name";
+        public const string PlayerNamePrefsKey = "playfab_player_name";
 
         [Header("PlayFab")] [SerializeField] private string _titleId = "1E230E";
 
@@ -42,7 +42,7 @@ namespace FirstChannel
             string playerName = PlayerPrefs.GetString(PlayerNamePrefsKey, string.Empty);
             bool hasPlayerName = !string.IsNullOrWhiteSpace(playerName);
 
-            _nameInput.characterLimit = 25;
+            _nameInput.characterLimit = 9;
             _nameInput.text = playerName;
             _inputNamePanel.SetActive(!hasPlayerName);
             _playButton.interactable = hasPlayerName;
@@ -94,9 +94,9 @@ namespace FirstChannel
 
             string playerName = _nameInput.text.Trim();
 
-            if (playerName.Length < 3 || playerName.Length > 25)
+            if (playerName.Length < 3 || playerName.Length > 9)
             {
-                ShowError("Ник должен содержать от 3 до 25 символов.");
+                ShowError("Ник должен содержать от 3 до 9 символов.");
                 return;
             }
 

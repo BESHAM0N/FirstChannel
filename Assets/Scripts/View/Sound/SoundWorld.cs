@@ -43,13 +43,24 @@ namespace FirstChannel
 
         public void PlaySfx(SoundType type, float volume = 1f, float pitch = 1f)
         {
+            PlaySfx(type, volume, pitch, null);
+        }
+
+        public void PlaySfx(SoundType type, float volume, float pitch, Action completed)
+        {
             EnsureSources();
 
             if (!_map.TryGetValue(type, out AudioClip clip) || clip == null)
+            {
+                completed?.Invoke();
                 return;
+            }
 
             _sfx.pitch = pitch;
             _sfx.PlayOneShot(clip, Mathf.Clamp01(volume));
+
+            if (completed != null)
+                StartCoroutine(WaitForSfx(clip.length / Mathf.Max(0.01f, Mathf.Abs(pitch)), completed));
         }
 
         public void PlayMusic(SoundType type, float volume = 1f)
@@ -131,6 +142,12 @@ namespace FirstChannel
 
             Action completed = _voiceCompleted;
             _voiceCompleted = null;
+            completed?.Invoke();
+        }
+
+        private static IEnumerator WaitForSfx(float duration, Action completed)
+        {
+            yield return new WaitForSecondsRealtime(duration);
             completed?.Invoke();
         }
 

@@ -119,6 +119,17 @@ namespace FirstChannel
             _player.PlaySfx(type, GetSfxVolume(volumeMultiplier), pitch);
         }
 
+        public void PlayAndWait(SoundType type, Action completed)
+        {
+            if (!IsSoundEnabled)
+            {
+                completed?.Invoke();
+                return;
+            }
+
+            _player.PlaySfx(type, GetSfxVolume(1f), 1f, completed);
+        }
+
         public void PlayLoop(SoundType type)
         {
             _lastMusic = type;

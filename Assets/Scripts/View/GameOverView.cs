@@ -1,12 +1,17 @@
-﻿using TMPro;
+using DG.Tweening;
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace FirstChannel
 {
     public sealed class GameOverView : MonoBehaviour
     {
+        private const float CounterDuration = 5f;
+        private const float CounterSoundInterval = 0.05f;
+
         public event Action MainMenuRequested;
         public event Action NewGameRequested;
 
@@ -14,7 +19,13 @@ namespace FirstChannel
         [SerializeField] private Button _mainMenuButton;
         [SerializeField] private Button _newGameButton;
 
+        [Inject] private ISoundService _soundService;
+
         private bool _isInitialized;
+        private Tween _counterTween;
+        private int _targetViewers;
+        private int _displayedViewers;
+        private float _nextCounterSoundTime;
 
         public void Initialize()
         {
@@ -29,12 +40,25 @@ namespace FirstChannel
 
         public void Show(int viewers)
         {
-            _textViewersValue.SetText("Вы набрали {0} просмотров", viewers);
+            KillCounterTween();
+
+            _targetViewers = Mathf.Max(0, viewers);
+            _displayedViewers = 0;
+            _nextCounterSoundTime = Time.unscaledTime;
+
+            SetViewersText(0);
             gameObject.SetActive(true);
+
+            _counterTween = DOVirtual.Int(0, _targetViewers, CounterDuration, UpdateCounter)
+                .SetEase(Ease.InCubic)
+                .SetUpdate(true)
+                .SetLink(gameObject, LinkBehaviour.KillOnDestroy)
+                .OnComplete(CompleteCounter);
         }
 
         public void Hide()
         {
+            KillCounterTween();
             gameObject.SetActive(false);
         }
 
@@ -45,7 +69,42 @@ namespace FirstChannel
 
             _mainMenuButton.onClick.RemoveListener(OnMainMenuClicked);
             _newGameButton.onClick.RemoveListener(OnNewGameClicked);
+            KillCounterTween();
             _isInitialized = false;
+        }
+
+        private void UpdateCounter(int viewers)
+        {
+            if (_displayedViewers == viewers)
+                return;
+
+            _displayedViewers = viewers;
+            SetViewersText(viewers);
+
+            if (viewers >= _targetViewers || Time.unscaledTime < _nextCounterSoundTime)
+                return;
+
+            _nextCounterSoundTime = Time.unscaledTime + CounterSoundInterval;
+            _soundService.Play(SoundType.Counter);
+        }
+
+        private void CompleteCounter()
+        {
+            _counterTween = null;
+            _displayedViewers = _targetViewers;
+            SetViewersText(_targetViewers);
+            _soundService.Play(SoundType.CounterFull);
+        }
+
+        private void SetViewersText(int viewers)
+        {
+            _textViewersValue.SetText("Вы набрали {0} просмотров", viewers);
+        }
+
+        private void KillCounterTween()
+        {
+            _counterTween?.Kill();
+            _counterTween = null;
         }
 
         private void OnMainMenuClicked()

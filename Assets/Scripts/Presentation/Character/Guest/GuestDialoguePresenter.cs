@@ -25,6 +25,7 @@ namespace FirstChannel
         private int _introductionIndex;
         private bool _isDisposed;
         private bool _isStopped;
+        private bool _introductionsStarted;
 
         public bool AreIntroductionsCompleted { get; private set; }
         public bool IsCardReactionPlaying { get; private set; }
@@ -60,7 +61,7 @@ namespace FirstChannel
             }
 
             _cardHand.CardApplied += OnCardApplied;
-            StartIntroductions();
+            _cardHand.SetInteractionEnabled(false);
         }
 
         public void Dispose()
@@ -76,8 +77,12 @@ namespace FirstChannel
             CancelActiveDialogue();
         }
 
-        private void StartIntroductions()
+        public void StartIntroductions()
         {
+            if (_isDisposed || _isStopped || _introductionsStarted)
+                return;
+
+            _introductionsStarted = true;
             AreIntroductionsCompleted = false;
             _introductionIndex = 0;
             _cardHand.SetInteractionEnabled(false);

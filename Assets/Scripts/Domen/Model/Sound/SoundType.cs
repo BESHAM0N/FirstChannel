@@ -25,6 +25,7 @@
         CardHover_4,
         TakeCard_2,
         TakeCard_3,
-        TakeCard_4
+        TakeCard_4,
+        CounterFull
     }
 }

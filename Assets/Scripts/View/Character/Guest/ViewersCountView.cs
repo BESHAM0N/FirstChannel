@@ -60,6 +60,15 @@ namespace FirstChannel
                 PlayNextValue();
         }
 
+        public void StopAnimations(int total)
+        {
+            KillTweens();
+            _pendingValues.Clear();
+            _displayedTotal = total;
+            _text.text = total.ToString();
+            _newCount.SetActive(false);
+        }
+
         private void PlayNextValue()
         {
             if (_pendingValues.Count == 0)
