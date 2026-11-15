@@ -29,7 +29,7 @@ namespace FirstChannel
             _newCountTransform = (RectTransform)_newCount.transform;
             _newCountStartPosition = _newCountTransform.anchoredPosition;
             _displayedTotal = total;
-            _text.text = total.ToString();
+            _text.text = total.ToString() + " Зрителей";
             _newCount.SetActive(false);
         }
 
@@ -43,7 +43,7 @@ namespace FirstChannel
                     value =>
                     {
                         _displayedTotal = value;
-                        _text.text = Mathf.RoundToInt(value).ToString();
+                        _text.text = Mathf.RoundToInt(value).ToString() + " Зрителей";
                     })
                 .SetEase(Ease.OutCubic)
                 .SetUpdate(true);
@@ -65,7 +65,7 @@ namespace FirstChannel
             KillTweens();
             _pendingValues.Clear();
             _displayedTotal = total;
-            _text.text = total.ToString();
+            _text.text = total.ToString() + " Зрителей";
             _newCount.SetActive(false);
         }
 

@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 839279f9017ce7442b92eaf629bc1a44
+guid: 1a1e63ae69ce6e841a76b15b26ed28e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6810355615420249487
-    second: IMG_6385_0
+      213: -157313879045856575
+    second: IMG_7091_0
+  - first:
+      213: 307940351542619318
+    second: IMG_7091_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IMG_6385_0
+      name: IMG_7091_0
       rect:
         serializedVersion: 2
-        x: 437
-        y: 144
-        width: 1252
-        height: 1785
+        x: 22
+        y: 103
+        width: 2522
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 17a0acc86a1cc71a0800000000000000
-      internalID: -6810355615420249487
+      spriteID: 1c2ab394cdb11ddf0800000000000000
+      internalID: -157313879045856575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_7091_1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 76
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bce4b14e16064400800000000000000
+      internalID: 307940351542619318
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IMG_6385_0: -6810355615420249487
+      IMG_7091_0: -157313879045856575
+      IMG_7091_1: 307940351542619318
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

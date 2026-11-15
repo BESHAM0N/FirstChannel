@@ -19,7 +19,7 @@ MonoBehaviour:
       \u0443\u043C\u0435? \u041A\u0442\u043E, \u0441\u043A\u0430\u0436\u0438 \u043D\u0430
       \u043C\u0438\u043B\u043E\u0441\u0442\u044C, \u043C\u0443\u043A\u0443-\u0442\u043E
       \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0442\u044C \u0431\u0443\u0434\u0435\u0442?"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 9af62eadb8d1bf342895e189c697d577, type: 3}
     FallbackDuration: 2.5
   Replicas:
   - CardId: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
       \u043E\u043C\u043B\u0435\u0442, \u0432\u0430\u043B\u0435\u043D\u043E\u043A!
       \u0412 \u0431\u043B\u0438\u043D\u0430\u0445 \u043C\u0443\u043A\u0430 \u043E\u0431\u044F\u0437\u0430\u043D\u0430
       \u0431\u044B\u0442\u044C!\r\n"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: db832c8a90f656445924b77d038268b3, type: 3}
     FallbackDuration: 2
   - CardId: 1
     Text: "\u041F\u043E\u043A\u0430\u0436\u0438 \u043C\u043D\u0435 \u0445\u043E\u0442\u044C
@@ -37,7 +37,7 @@ MonoBehaviour:
       \u0431\u0435\u0437 \u043C\u0443\u043A\u0438, \u043A\u043E\u0442\u043E\u0440\u044B\u0439
       \u043D\u0430 \u0432\u043A\u0443\u0441 \u043D\u0435 \u043A\u0430\u043A \u043E\u0431\u044B\u0447\u043D\u044B\u0439
       \u043E\u043C\u043B\u0435\u0442!"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: eb6c234f74d310a4cbdd35a245389e9d, type: 3}
     FallbackDuration: 2
   - CardId: 2
     Text: "\u042F\u0439\u0446\u043E \u0438 \u043C\u043E\u043B\u043E\u043A\u043E \u044D\u0442\u043E
@@ -45,14 +45,14 @@ MonoBehaviour:
       \u044D\u0442\u043E\u0433\u043E \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E,
       \u0431\u0435\u0441\u0442\u043E\u043B\u043A\u043E\u0432\u044B\u0439 \u0442\u044B
       \u043A\u0430\u0440\u0430\u0441\u044C?"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: e2183eb36ccb1eb4588d9aedfbb840be, type: 3}
     FallbackDuration: 2
   - CardId: 3
     Text: "\u0414\u0430\u0436\u0435 \u0435\u0441\u043B\u0438 \u044D\u0442\u043E \u043E\u043B\u0430\u0434\u044C\u044F,
       \u0443\u043C\u043D\u0438\u043A, \u0434\u043B\u044F \u043D\u0438\u0445 \u0442\u043E\u0436\u0435
       \u043D\u0443\u0436\u043D\u0430 \u043C\u0443\u043A\u0430, \u043D\u0435\u0434\u043E\u0432\u0430\u0440\u0435\u043D\u043D\u044B\u0439
       \u0442\u044B \u043F\u0435\u043B\u044C\u043C\u0435\u043D\u044C!"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: e76700b903c5ab24e980025c970d5b7c, type: 3}
     FallbackDuration: 2
   - CardId: 4
     Text: "\u0422\u044B \u0436\u0435, \u0431\u043B\u0438\u043D, \u0431\u043B\u0438\u043D\u043E\u0432
@@ -60,7 +60,7 @@ MonoBehaviour:
       \u0430 \u0440\u043E\u0442 \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0448\u044C
       \u043F\u043E\u0445\u043B\u0435\u0449\u0435 \u043B\u044E\u0431\u043E\u0433\u043E
       \u0448\u0435\u0444\u0430."
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 67eb514749e863a4ebb5f1b04a08f937, type: 3}
     FallbackDuration: 2
   - CardId: 5
     Text: "\u041D\u0430\u0434\u043E\u0435\u043B \u0442\u044B \u0441\u043E \u0441\u0432\u043E\u0438\u043C
@@ -69,7 +69,7 @@ MonoBehaviour:
       \u0435\u0441\u043B\u0438 \u0431\u043B\u0438\u043D \u0431\u0435\u0437 \u043C\u0443\u043A\u0438
       \u044D\u0442\u043E \u043E\u043C\u043B\u0435\u0442, \u0432 \u0440\u043E\u0442
       \u043C\u043D\u0435 \u043D\u043E\u0433\u0438."
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 9ae984bf1b8ab884bb9a357ae05748a8, type: 3}
     FallbackDuration: 2
   - CardId: 6
     Text: "\u0414\u0430 \u0445\u043E\u0442\u044C \u0434\u0443\u0440\u0430\u0446\u043A\u0438\u0439
@@ -79,7 +79,7 @@ MonoBehaviour:
       \u0442\u0443\u0434\u0430 \u043D\u0435 \u0434\u043E\u0431\u0430\u0432\u0438\u0448\u044C,
       \u0432\u0441\u0451 \u0440\u0430\u0432\u043D\u043E \u043E\u043C\u043B\u0435\u0442
       \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u0441\u044F!"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: e6365bda8b9fa414ca145723d70d76c7, type: 3}
     FallbackDuration: 2
   - CardId: 7
     Text: "\u0422\u0430\u0440\u0430\u043A\u0430\u043D \u0442\u044B \u0431\u0435\u0441\u043A\u0440\u044B\u043B\u044B\u0439,
@@ -88,7 +88,7 @@ MonoBehaviour:
       \u0436\u0435 \u0442\u043E\u0447\u044C \u0432 \u0442\u043E\u0447\u044C, \u043A\u0430\u043A
       \u0432 \u0442\u0432\u043E\u0438\u0445 \u0437\u043B\u043E\u043F\u043E\u043B\u0443\u0447\u043D\u044B\u0445
       \u201Cflourless pancakes\u201D "
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: aef91487cba822340b18919bd3691e89, type: 3}
     FallbackDuration: 2
   - CardId: 8
     Text: "\u042F \u043F\u0440\u043E\u0441\u0442\u043E \u0445\u043E\u0442\u0435\u043B
@@ -96,14 +96,14 @@ MonoBehaviour:
       \u043F\u043E\u0447\u0435\u043C\u0443 \u044F \u043F\u043E\u043B\u0443\u0447\u0430\u044E
       \u0447\u0451\u0440\u0442\u043E\u0432 \u043E\u043C\u043B\u0435\u0442 \u0438
       \u0443\u043D\u0438\u0436\u0435\u043D\u0438\u044F \u0432 \u043F\u0440\u0438\u0434\u0430\u0447\u0443?"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: c90e59b6db3fd6a4c9bb02e2417a22e4, type: 3}
     FallbackDuration: 2
   - CardId: 9
     Text: "\u0412\u0435\u0441\u044C \u043C\u043E\u0439 \u043A\u0443\u043B\u0438\u043D\u0430\u0440\u043D\u044B\u0439
       \u043E\u043F\u044B\u0442 \u0432 \u043F\u043E\u043C\u043E\u0439\u043A\u0443
       \u0438\u0437-\u0437\u0430 \u0442\u0430\u043A\u043E\u0433\u043E \u043F\u0440\u0438\u0434\u0443\u0440\u043A\u0430
       \u043A\u0430\u043A \u0442\u044B!"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: cf1a7df6d15ba764081221d3a76e43c7, type: 3}
     FallbackDuration: 2
   - CardId: 10
     Text: "\u041D\u0435 \u043C\u043E\u0436\u0435\u0442\u0435 \u0436\u0435 \u0432\u044B
@@ -111,14 +111,14 @@ MonoBehaviour:
       \u0441\u0442\u043E\u0440\u043E\u043D\u0435! \u0414\u0430 \u043D\u0435 \u043C\u043E\u0433\u0443\u0442
       \u0431\u044B\u0442\u044C \u0431\u043B\u0438\u043D\u044B \u0411\u0415\u0417
       \u041C\u0423\u041A\u0418!!!"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 3d7bdd4426398b5419d2434e0c7ecc76, type: 3}
     FallbackDuration: 2
   - CardId: 11
     Text: "\u0414\u0430 \u043D\u0443 \u0432\u0430\u0441 \u0432\u0441\u0435\u0445,
       \u0435\u0441\u043B\u0438 \u0432\u044B \u043D\u0430 \u0435\u0433\u043E \u0441\u0442\u043E\u0440\u043E\u043D\u0443
       \u0432\u0441\u0442\u0430\u0451\u0442\u0435. \u0413\u043B\u0443\u043F\u043E\u0441\u0442\u0438
       \u043A\u0443\u043B\u0438\u043D\u0430\u0440\u043D\u044B\u0435, \u0431\u043B\u0438\u043D."
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 1cd652b6be77d2047be28e406fc72e10, type: 3}
     FallbackDuration: 2
   - CardId: 12
     Text: "\u0410 \u0441\u0435\u0439\u0447\u0430\u0441, \u0434\u0443\u0440\u0435\u043D\u044C,
@@ -127,7 +127,7 @@ MonoBehaviour:
       \u0438\u0437 \u044F\u0438\u0446 \u0438 \u043C\u043E\u043B\u043E\u043A\u0430
       \u043D\u0438\u0447\u0435\u0433\u043E, \u043A\u0440\u043E\u043C\u0435 \u043E\u043C\u043B\u0435\u0442\u0430,
       \u043D\u0435 \u0432\u044B\u0439\u0434\u0435\u0442."
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 08742aaca92d475408e763f066b39deb, type: 3}
     FallbackDuration: 2
   - CardId: 13
     Text: "\u0414\u0430 \u0447\u0442\u043E \u0442\u044B \u043F\u0440\u0438\u043A\u043E\u043F\u0430\u043B\u0441\u044F?!
@@ -136,7 +136,7 @@ MonoBehaviour:
       \u044F \u043D\u0435\u0434\u043E\u0432\u043E\u043B\u0435\u043D \u0442\u0435\u043C,
       \u0447\u0442\u043E \u0432\u044B \u043D\u0430\u0437\u044B\u0432\u0430\u0435\u0442\u0435
       \u0442\u0430\u043A \u043E\u0431\u044B\u0447\u043D\u044B\u0439 \u043E\u043C\u043B\u0435\u0442."
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 3f9cfcf1426ac3e48bbc1255228976df, type: 3}
     FallbackDuration: 2
   - CardId: 14
     Text: "\u0414\u0430 \u0441\u043A\u043E\u043B\u044C\u043A\u043E \u043C\u043E\u0436\u043D\u043E?
@@ -145,7 +145,7 @@ MonoBehaviour:
       \u042D\u0442\u043E \u043D\u0435 \u043F\u0440\u0435\u0442\u0435\u043D\u0437\u0438\u044F,
       \u0442\u043E\u0440\u043C\u043E\u0437\u043D\u0443\u0442\u044B\u0439 \u0442\u044B
       \u043A\u0430\u0440\u0430\u0441\u044C, \u044D\u0442\u043E \u0444\u0438\u0437\u0438\u043A\u0430. "
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 61b2cd42496937c4884105e350d00b1c, type: 3}
     FallbackDuration: 2
   - CardId: 15
     Text: "\u0420\u0430\u0437\u0434\u043E\u043B\u0431\u0430\u043D\u043D\u0430\u044F
@@ -153,20 +153,20 @@ MonoBehaviour:
       \u043A\u0443\u043B\u0438\u043D\u0430\u0440\u0438\u0438 \u0433\u043B\u044F\u043D\u044C,
       \u043F\u0440\u0435\u0436\u0434\u0435 \u0447\u0435\u043C \u043E\u0440\u0430\u0442\u044C
       \u043D\u0430 \u043C\u0435\u043D\u044F."
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 65ee2788c16a94046914096b4473a34d, type: 3}
     FallbackDuration: 2
   - CardId: 16
     Text: "\u0412\u043E\u0442! \u041B\u044E\u0431\u043E\u0439 \u043F\u043E\u0432\u0430\u0440
       \u043F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442, \u0447\u0442\u043E
       \u043D\u0435\u0442 \u043C\u0443\u043A\u0438 - \u043D\u0435\u0442 \u0431\u043B\u0438\u043D\u0430!"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 8cdbf98d2b1bd944394971c58529cf85, type: 3}
     FallbackDuration: 2
   - CardId: 17
     Text: "\u0414\u0430\u0439 \u043B\u044E\u0431\u043E\u043C\u0443 \u043F\u043E\u043F\u0440\u043E\u0431\u043E\u0432\u0430\u0442\u044C
       \u043E\u043C\u043B\u0435\u0442 \u0438 \u0442\u0432\u043E\u0438 \u201Cflourless
       pancakes\u201D, \u043E\u043D \u0440\u0430\u0437\u043D\u0438\u0446\u044B, \u0431\u043B\u0438\u043D,
       \u043D\u0435 \u0437\u0430\u043C\u0435\u0442\u0438\u0442!"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 33e68186d15a5284e9d1bf34bd64c739, type: 3}
     FallbackDuration: 2
   - CardId: 18
     Text: "\u041F\u043E\u043A\u0430 \u044D\u0442\u043E\u0442 \u0432\u0430\u043B\u0435\u043D\u043E\u043A
@@ -175,7 +175,7 @@ MonoBehaviour:
       \u0438\u0437 \u0432\u0430\u0441 \u0434\u0435\u043B\u0430\u043B \u0431\u043B\u0438\u043D\u044B
       \u0431\u0435\u0437 \u043C\u0443\u043A\u0438? \u041D\u0435\u0442?! \u042F \u0442\u0430\u043A
       \u0438 \u0434\u0443\u043C\u0430\u043B."
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: fc3569d7235dc834d89e19b1401569f5, type: 3}
     FallbackDuration: 2
   - CardId: 19
     Text: "\u0420\u0435\u043A\u043B\u0430\u043C\u0430? \u041E\u0447\u0435\u043D\u044C
@@ -184,12 +184,12 @@ MonoBehaviour:
       \u0431\u0435\u0437 \u043C\u0443\u043A\u0438\u201D \u043E\u043A\u0430\u0437\u0430\u043B\u0438\u0441\u044C
       \u0431\u044B \u043D\u0430 \u0435\u0433\u043E \u0442\u0443\u043F\u043E\u0439
       \u0431\u0430\u0448\u043A\u0435!"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 08b10f0ea84ecfa4195f09ded5716e35, type: 3}
     FallbackDuration: 2
   - CardId: 20
     Text: "\u041E\u041B\u0410\u0414\u042C\u0418 \u0411\u0415\u0417 \u0413\u0420\u0401\u0411\u0410\u041D\u041E\u0419
       \u041C\u0423\u041A\u0418 \u2014 \u042D\u0422\u041E \u041E\u041C\u041B\u0415\u0422,
       \u041F\u0420\u0418\u0428\u0418\u0411\u041B\u0415\u041D\u041D\u042B\u0419 \u0422\u042B
       \u041E\u0411 \u0414\u0415\u0420\u0415\u0412\u041E \u0411\u0410\u0428\u041C\u0410\u041A!"
-    VoiceClip: {fileID: 0}
+    VoiceClip: {fileID: 8300000, guid: 912e772c6dd739b499cba9cbf0aaa64c, type: 3}
     FallbackDuration: 2

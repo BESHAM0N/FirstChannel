@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Zenject;
 
 namespace FirstChannel
 {
@@ -36,6 +37,8 @@ namespace FirstChannel
         [SerializeField, Range(1f, 1.2f)] private float _hoverScale = 1.04f;
         [SerializeField, Min(0f)] private float _hoverDuration = 0.2f;
 
+        [Inject] private ISoundService _soundService;
+
         private const string GameSceneName = "GameScene";
 
         private ModeGameButtonHover _withCensorshipHover;
@@ -58,12 +61,25 @@ namespace FirstChannel
         {
             _withCensorshipHover?.ResetState();
             _uncensoredHover?.ResetState();
+
+            if (_withCensorshipHover != null)
+                _withCensorshipHover.Hovered += PlayCensorshipHoverSound;
+
+            if (_uncensoredHover != null)
+                _uncensoredHover.Hovered += PlayUncensoredHoverSound;
+
             _withCensorshipButton.onClick.AddListener(StartWithCensorship);
             _uncensoredButton.onClick.AddListener(StartUncensored);
         }
 
         private void OnDisable()
         {
+            if (_withCensorshipHover != null)
+                _withCensorshipHover.Hovered -= PlayCensorshipHoverSound;
+
+            if (_uncensoredHover != null)
+                _uncensoredHover.Hovered -= PlayUncensoredHoverSound;
+
             _withCensorshipButton.onClick.RemoveListener(StartWithCensorship);
             _uncensoredButton.onClick.RemoveListener(StartUncensored);
         }
@@ -81,6 +97,16 @@ namespace FirstChannel
         private void StartUncensored()
         {
             StartGame(GameMode.Uncensored);
+        }
+
+        private void PlayCensorshipHoverSound()
+        {
+            _soundService.Play(SoundType.GAW);
+        }
+
+        private void PlayUncensoredHoverSound()
+        {
+            _soundService.Play(SoundType.MEOW);
         }
 
         private ModeGameButtonHover ConfigureHover(

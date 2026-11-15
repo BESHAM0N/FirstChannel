@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccde223e899f47f9b70c4101763310f4, type: 3}
   m_Name: Sensation_01
   m_EditorClassIdentifier: Assembly-CSharp::FirstChannel.CardConfig
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 02898d70a2c5d914aaaa07d04b095ea9, type: 3}
   Name: "\u0421\u0415\u041D\u0421\u0410\u0426\u0418\u042F!"
   Description: "\u041E\u0433\u0440\u043E\u043C\u043D\u044B\u0435 \u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440\u044B,
     \u043D\u043E \u0441\u0438\u043B\u044C\u043D\u043E \u0431\u0435\u0441\u0438\u0442

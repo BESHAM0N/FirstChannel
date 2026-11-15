@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccde223e899f47f9b70c4101763310f4, type: 3}
   m_Name: AdvertisingBreak_02
   m_EditorClassIdentifier: Assembly-CSharp::FirstChannel.CardConfig
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: c842e2751cd97ca4db743ad251ff4872, type: 3}
   Name: "\u0420\u0435\u043A\u043B\u0430\u043C\u043D\u0430\u044F \u043F\u0430\u0443\u0437\u0430"
   Description: "\u041E\u0441\u0442\u0443\u0436\u0430\u0435\u0442 \u043F\u044B\u043B
     \u043E\u0431\u043E\u0438\u0445 \u0433\u043E\u0441\u0442\u0435\u0439, \u043D\u043E

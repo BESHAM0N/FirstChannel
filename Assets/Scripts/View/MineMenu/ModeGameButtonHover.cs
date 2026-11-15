@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,6 +10,8 @@ namespace FirstChannel
         IPointerEnterHandler,
         IPointerExitHandler
     {
+        public event Action Hovered;
+
         private Button _button;
         private RectTransform _buttonTransform;
         private RectTransform _tint;
@@ -53,10 +56,11 @@ namespace FirstChannel
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (_button == null || !_button.IsInteractable())
+            if (_button == null || !_button.IsInteractable() || _isHovered)
                 return;
 
             _isHovered = true;
+            Hovered?.Invoke();
             MoveAboveTint();
             AnimateImages(true);
             AnimateScale(_initialScale * _hoverScale, Ease.OutBack);

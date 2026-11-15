@@ -28,5 +28,7 @@
         TakeCard_4,
         CounterFull,
         NewRecord,
+        MEOW,
+        GAW
     }
 }

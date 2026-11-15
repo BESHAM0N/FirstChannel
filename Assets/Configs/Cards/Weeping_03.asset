@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccde223e899f47f9b70c4101763310f4, type: 3}
   m_Name: Weeping_03
   m_EditorClassIdentifier: Assembly-CSharp::FirstChannel.CardConfig
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 3947132ae9f694f4d816c407fc70a3c7, type: 3}
   Name: "\u0421\u043B\u0451\u0437\u044B"
   Description: "\u041F\u0440\u0438\u043D\u043E\u0441\u0438\u0442 \u0441\u0438\u043B\u044C\u043D\u043E
     \u0431\u043E\u043B\u044C\u0448\u0435 \u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440\u043E\u0432,
