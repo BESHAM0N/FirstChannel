@@ -59,7 +59,7 @@ namespace FirstChannel
             _timeline.Finished += RequestFinish;
             _deck.Emptied += CheckCardsExhausted;
             _hand.Changed += CheckCardsExhausted;
-            _guestDialogue.GuestEmotionDepleted += OnGuestEmotionDepleted;
+            _guestDialogue.GuestPatienceLimitReached += OnGuestPatienceLimitReached;
             _guestDialogue.IntroductionsCompleted += OnIntroductionsCompleted;
             _guestDialogue.CardReactionCompleted += OnCardReactionCompleted;
             _gameOverView.MainMenuRequested += OpenMainMenu;
@@ -68,7 +68,7 @@ namespace FirstChannel
             _gameOverView.Initialize();
             _timelinePresenter.SetRunning(false);
             _viewersPresenter.SetRunning(false);
-            _sound.PlayLoop(SoundType.GameBackgroundMusic);
+            _sound.StopLoop();
 
             if (_guestDialogue.AreIntroductionsCompleted)
                 OnIntroductionsCompleted();
@@ -91,7 +91,7 @@ namespace FirstChannel
             _timeline.Finished -= RequestFinish;
             _deck.Emptied -= CheckCardsExhausted;
             _hand.Changed -= CheckCardsExhausted;
-            _guestDialogue.GuestEmotionDepleted -= OnGuestEmotionDepleted;
+            _guestDialogue.GuestPatienceLimitReached -= OnGuestPatienceLimitReached;
             _guestDialogue.IntroductionsCompleted -= OnIntroductionsCompleted;
             _guestDialogue.CardReactionCompleted -= OnCardReactionCompleted;
             _gameOverView.MainMenuRequested -= OpenMainMenu;
@@ -99,7 +99,7 @@ namespace FirstChannel
             _gameOverView.Dispose();
         }
 
-        private void OnGuestEmotionDepleted(GuestId guestId)
+        private void OnGuestPatienceLimitReached(GuestId guestId)
         {
             RequestFinish();
         }

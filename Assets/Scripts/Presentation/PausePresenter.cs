@@ -64,6 +64,7 @@ namespace FirstChannel
             if (_isPaused)
                 return;
 
+            _sound.Play(SoundType.ButtonClick);
             _isPaused = true;
             _timeScaleBeforePause = Time.timeScale;
             Time.timeScale = 0f;
@@ -78,6 +79,7 @@ namespace FirstChannel
             if (!_isPaused)
                 return;
 
+            _sound.Play(SoundType.ButtonClick);
             _settingPanelView.OnHide();
             _pauseView.Hide();
             RestoreTimeScale();
@@ -85,6 +87,7 @@ namespace FirstChannel
 
         private void OpenMainMenu()
         {
+            _sound.Play(SoundType.ButtonClick);
             RestoreTimeScale();
             _sound.StopLoop();
             SceneManager.LoadScene(_mainMenuSceneName);

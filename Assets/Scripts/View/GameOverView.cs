@@ -114,11 +114,13 @@ namespace FirstChannel
 
         private void OnMainMenuClicked()
         {
+            _soundService.Play(SoundType.ButtonClick);
             MainMenuRequested?.Invoke();
         }
 
         private void OnNewGameClicked()
         {
+            _soundService.Play(SoundType.ButtonClick);
             NewGameRequested?.Invoke();
         }
     }

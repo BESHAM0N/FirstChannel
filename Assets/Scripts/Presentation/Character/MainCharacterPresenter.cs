@@ -11,6 +11,7 @@ namespace FirstChannel
         private const float CharactersPerSecond = 25f;
         private const float MinReplicaDuration = 3f;
         private const float MaxReplicaDuration = 8f;
+        private const float CardTalkDuration = 2f;
 
         private static readonly string[] IntroReplicas =
         {
@@ -26,6 +27,7 @@ namespace FirstChannel
         private readonly ISoundService _sound;
 
         private Tween _replicaTimer;
+        private Tween _cardTalkTimer;
         private int _replicaIndex;
         private bool _isDisposed;
 
@@ -43,6 +45,7 @@ namespace FirstChannel
 
         public void Initialize()
         {
+            _cardHand.CardApplied += OnCardApplied;
             _cardHand.SetInteractionEnabled(false);
 
             string playerName = PlayerPrefs.GetString(
@@ -56,8 +59,12 @@ namespace FirstChannel
         public void Dispose()
         {
             _isDisposed = true;
+            _cardHand.CardApplied -= OnCardApplied;
             _replicaTimer?.Kill();
             _replicaTimer = null;
+            _cardTalkTimer?.Kill();
+            _cardTalkTimer = null;
+            _view.PlayIdleAnimation();
         }
 
         private void PlayNextReplica()
@@ -68,14 +75,21 @@ namespace FirstChannel
             if (_replicaIndex >= IntroReplicas.Length)
             {
                 _view.HideReplica();
+                _view.PlayIdleAnimation();
                 _sound.PlayAndWait(SoundType.StartGame, StartGuestIntroductions);
                 return;
             }
 
             string replica = IntroReplicas[_replicaIndex];
-            _view.ShowReplica(replica);
+            float duration = Mathf.Clamp(
+                replica.Length / CharactersPerSecond,
+                MinReplicaDuration,
+                MaxReplicaDuration);
+
+            _view.PlayTalkAnimation();
+            _view.ShowReplica(replica, duration);
             _replicaTimer = DOVirtual.DelayedCall(
-                    Mathf.Clamp(replica.Length / CharactersPerSecond, MinReplicaDuration, MaxReplicaDuration),
+                    duration,
                     CompleteReplica,
                     false)
                 .SetUpdate(true);
@@ -88,10 +102,27 @@ namespace FirstChannel
             PlayNextReplica();
         }
 
+        private void OnCardApplied(CardPlayResult _)
+        {
+            _cardTalkTimer?.Kill();
+            _view.PlayTalkAnimation();
+            _cardTalkTimer = DOVirtual.DelayedCall(CardTalkDuration, CompleteCardTalk, false)
+                .SetUpdate(true);
+        }
+
+        private void CompleteCardTalk()
+        {
+            _cardTalkTimer = null;
+            _view.PlayIdleAnimation();
+        }
+
         private void StartGuestIntroductions()
         {
-            if (!_isDisposed)
-                _guestDialogue.StartIntroductions();
+            if (_isDisposed)
+                return;
+
+            _sound.PlayLoop(SoundType.GameBackgroundMusic);
+            _guestDialogue.StartIntroductions();
         }
     }
 }

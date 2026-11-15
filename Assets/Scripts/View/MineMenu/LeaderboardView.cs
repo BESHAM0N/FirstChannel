@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace FirstChannel
 {
@@ -24,6 +25,8 @@ namespace FirstChannel
         [SerializeField] private TMP_Text _myPointsText;
         [SerializeField] private Transform _rowsParent;
         [SerializeField] private LeaderboardRowView _rowTemplate;
+
+        [Inject] private ISoundService _soundService;
 
         private readonly List<LeaderboardRowView> _rows = new List<LeaderboardRowView>();
         private PlayFabLeaderboardClient _client;
@@ -91,6 +94,8 @@ namespace FirstChannel
         {
             if (_isSubmittingName)
                 return;
+
+            _soundService.Play(SoundType.ButtonClick);
 
             string playerName = _nameInput.text.Trim();
 

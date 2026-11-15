@@ -24,17 +24,17 @@ namespace FirstChannel
             bool isBoosted = _isProvocationBoostArmed && IsProvocation(card);
             int multiplier = isBoosted ? BoostMultiplier : 1;
             int viewers = ResolveViewers(card, targetGuestId) * multiplier;
-            int emotion = card.AddEmotionCharacter * multiplier;
+            int patience = card.AddEmotionCharacter * multiplier;
             var emotionChanges = new Dictionary<GuestId, int>(2);
 
             if (AffectsBothGuests(card))
             {
-                emotionChanges.Add(GuestId.First, emotion);
-                emotionChanges.Add(GuestId.Second, emotion);
+                emotionChanges.Add(GuestId.First, patience);
+                emotionChanges.Add(GuestId.Second, patience);
             }
             else
             {
-                emotionChanges.Add(targetGuestId, emotion);
+                emotionChanges.Add(targetGuestId, patience);
             }
 
             if (isBoosted)
@@ -66,7 +66,7 @@ namespace FirstChannel
                 return card.AddViewers;
 
             return _guestRoster.TryGetGuest(targetGuestId, out Guest guest) &&
-                   guest.EmotionBar.CurrentValue <= EmotionBar.SecondFireThreshold
+                   guest.EmotionBar.CurrentValue >= EmotionBar.SecondFireThreshold
                 ? WeepingCriticalViewers
                 : card.AddViewers;
         }

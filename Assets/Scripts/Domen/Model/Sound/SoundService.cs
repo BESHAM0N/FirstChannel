@@ -14,9 +14,9 @@ namespace FirstChannel
         private const string MUSIC_VOLUME_PREF_KEY = "music_volume";
         private const string EFFECT_VOLUME_PREF_KEY = "effect_volume";
 
-        private const float DEFAULT_MASTER_VOLUME = 0.4f;
-        private const float DEFAULT_MUSIC_VOLUME = 0.4f;
-        private const float DEFAULT_EFFECT_VOLUME = 0.4f;
+        private const float DEFAULT_MASTER_VOLUME = 0.3f;
+        private const float DEFAULT_MUSIC_VOLUME = 0.2f;
+        private const float DEFAULT_EFFECT_VOLUME = 0.3f;
 
         private const float MUSIC_VOLUME_MULTIPLIER = 1f;
         private const float SFX_VOLUME_MULTIPLIER = 1f;

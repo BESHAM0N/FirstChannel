@@ -18,6 +18,8 @@ namespace FirstChannel
         [SerializeField] private GameObject _dialogPanel;
         [SerializeField] private TMP_Text _dialogText;
 
+        private DialogueTypewriter _typewriter;
+
         public GuestId Id => _id;
 
         public void InitializeEmotion(int value)
@@ -32,12 +34,12 @@ namespace FirstChannel
             UpdateFire(value);
         }
 
-        public void ShowReplica(string text)
+        public void ShowReplica(string text, float duration)
         {
-            _dialogText.text = text;
             _dialogPanel.transform.DOKill();
             _dialogPanel.SetActive(true);
             _dialogPanel.transform.localScale = Vector3.one * 0.9f;
+            _typewriter.Play(text, duration);
             _dialogPanel.transform.DOScale(1f, 0.15f)
                 .SetEase(Ease.OutBack)
                 .SetUpdate(true);
@@ -46,6 +48,7 @@ namespace FirstChannel
         public void HideReplica()
         {
             _dialogPanel.transform.DOKill();
+            _typewriter.Clear();
             _dialogPanel.SetActive(false);
             PlayIdleAnimation();
         }
@@ -79,13 +82,20 @@ namespace FirstChannel
 
         private void Awake()
         {
+            _typewriter = new DialogueTypewriter(_dialogText);
             HideReplica();
+        }
+
+        private void OnDestroy()
+        {
+            _dialogPanel.transform.DOKill();
+            _typewriter?.Stop();
         }
 
         private void UpdateFire(int value)
         {
-            bool isSecondFire = value <= EmotionBar.SecondFireThreshold;
-            bool isFirstFire = value <= EmotionBar.FirstFireThreshold && !isSecondFire;
+            bool isSecondFire = value >= EmotionBar.SecondFireThreshold;
+            bool isFirstFire = value >= EmotionBar.FirstFireThreshold && !isSecondFire;
 
             _firstFireAnimation.SetActive(isFirstFire);
             _secondFireAnimation.SetActive(isSecondFire);

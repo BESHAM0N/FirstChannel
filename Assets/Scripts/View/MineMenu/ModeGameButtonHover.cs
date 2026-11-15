@@ -16,6 +16,8 @@ namespace FirstChannel
         private Image _hoverImage;
         private Vector3 _initialScale;
         private int _initialSiblingIndex;
+        private int _defaultImageSiblingIndex;
+        private int _hoverImageSiblingIndex;
         private float _defaultImageAlpha;
         private float _hoverImageAlpha;
         private float _hoverScale;
@@ -39,6 +41,8 @@ namespace FirstChannel
             _hoverImage = hoverImage;
             _initialScale = _buttonTransform.localScale;
             _initialSiblingIndex = _buttonTransform.GetSiblingIndex();
+            _defaultImageSiblingIndex = defaultImage.transform.GetSiblingIndex();
+            _hoverImageSiblingIndex = hoverImage.transform.GetSiblingIndex();
             _defaultImageAlpha = defaultImage.color.a;
             _hoverImageAlpha = hoverImage.color.a;
             _hoverScale = hoverScale;
@@ -75,6 +79,8 @@ namespace FirstChannel
             _isHovered = false;
             _buttonTransform.SetSiblingIndex(_initialSiblingIndex);
             _buttonTransform.localScale = _initialScale;
+            _defaultImage.transform.SetSiblingIndex(_defaultImageSiblingIndex);
+            _hoverImage.transform.SetSiblingIndex(_hoverImageSiblingIndex);
             SetAlpha(_defaultImage, _defaultImageAlpha);
             SetAlpha(_hoverImage, 0f);
             _defaultImage.gameObject.SetActive(true);
@@ -93,22 +99,39 @@ namespace FirstChannel
         private void AnimateImages(bool showHover)
         {
             _imageTween?.Kill();
-            _defaultImage.gameObject.SetActive(true);
-            _hoverImage.gameObject.SetActive(true);
+
+            Image currentImage = showHover ? _defaultImage : _hoverImage;
+            Image nextImage = showHover ? _hoverImage : _defaultImage;
+            float currentAlpha = showHover ? _defaultImageAlpha : _hoverImageAlpha;
+            float nextAlpha = showHover ? _hoverImageAlpha : _defaultImageAlpha;
+
+            currentImage.gameObject.SetActive(true);
+            nextImage.gameObject.SetActive(true);
+            MoveAbove(currentImage, nextImage);
+            SetAlpha(currentImage, currentAlpha);
+            SetAlpha(nextImage, nextAlpha);
 
             _imageTween = DOTween.Sequence()
-                .Join(_defaultImage.DOFade(showHover ? 0f : _defaultImageAlpha, _duration))
-                .Join(_hoverImage.DOFade(showHover ? _hoverImageAlpha : 0f, _duration))
+                .Append(currentImage.DOFade(0f, _duration))
                 .SetEase(Ease.OutCubic)
                 .SetUpdate(true)
                 .OnComplete(() =>
                 {
                     if (_isHovered == showHover)
                     {
-                        _defaultImage.gameObject.SetActive(!showHover);
-                        _hoverImage.gameObject.SetActive(showHover);
+                        currentImage.gameObject.SetActive(false);
+                        nextImage.gameObject.SetActive(true);
                     }
                 });
+        }
+
+        private static void MoveAbove(Image image, Image imageBelow)
+        {
+            int imageIndex = image.transform.GetSiblingIndex();
+            int imageBelowIndex = imageBelow.transform.GetSiblingIndex();
+
+            if (imageIndex < imageBelowIndex)
+                image.transform.SetSiblingIndex(imageBelowIndex);
         }
 
         private void AnimateScale(Vector3 targetScale, Ease ease)

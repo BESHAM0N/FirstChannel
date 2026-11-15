@@ -6,13 +6,13 @@ namespace FirstChannel
     {
         public const int MinValue = 0;
         public const int MaxValue = 100;
-        public const int FirstFireThreshold = 70;
-        public const int SecondFireThreshold = 30;
+        public const int FirstFireThreshold = 40;
+        public const int SecondFireThreshold = 70;
 
         public event Action<int> ValueChanged;
-        public event Action Depleted;
+        public event Action LimitReached;
 
-        public int CurrentValue { get; private set; } = MaxValue;
+        public int CurrentValue { get; private set; } = MinValue;
 
         public int Apply(int value)
         {
@@ -24,8 +24,8 @@ namespace FirstChannel
 
             ValueChanged?.Invoke(CurrentValue);
 
-            if (CurrentValue == MinValue)
-                Depleted?.Invoke();
+            if (CurrentValue == MaxValue)
+                LimitReached?.Invoke();
 
             return CurrentValue;
         }

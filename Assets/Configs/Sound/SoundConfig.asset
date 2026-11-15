@@ -18,13 +18,19 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: 06ddb112b4d2c32438c011aa94631764, type: 3}
   - SourceType: 0
     SoundType: 1
-    AudioClip: {fileID: 8300000, guid: a906ed44a98c9fa4596945b21ef2dbaf, type: 3}
+    AudioClip: {fileID: 8300000, guid: 4622e3f2900a6fb43b2ece4c0c5fecd1, type: 3}
+  - SourceType: 0
+    SoundType: 2
+    AudioClip: {fileID: 8300000, guid: 3b58457f34f5f4746b96d06c4fffe462, type: 3}
   - SourceType: 1
     SoundType: 14
     AudioClip: {fileID: 8300000, guid: 5a533c237d0453c41987e3d541334d46, type: 3}
   - SourceType: 1
     SoundType: 3
     AudioClip: {fileID: 8300000, guid: b38f9cde79838fd4a8e1fa0f06231c13, type: 3}
+  - SourceType: 1
+    SoundType: 4
+    AudioClip: {fileID: 8300000, guid: c6716bafaa86900449f32d3506a2acf5, type: 3}
   - SourceType: 1
     SoundType: 7
     AudioClip: {fileID: 8300000, guid: 7ba5b5ff24fc05b449bb74c69def0f93, type: 3}

@@ -8,7 +8,7 @@ namespace FirstChannel
 {
     public sealed class GuestDialoguePresenter : IInitializable, IDisposable
     {
-        public event Action<GuestId> GuestEmotionDepleted;
+        public event Action<GuestId> GuestPatienceLimitReached;
         public event Action IntroductionsCompleted;
         public event Action CardReactionCompleted;
 
@@ -109,7 +109,7 @@ namespace FirstChannel
                 Replica replica = config.IntroReplica;
                 int session = ++_dialogueSession;
                 _activeView = view;
-                view.ShowReplica(replica.Text);
+                view.ShowReplica(replica.Text, replica.Duration);
 
                 if (replica.VoiceClip != null)
                 {
@@ -147,14 +147,14 @@ namespace FirstChannel
             if (_isStopped)
                 return;
 
-            List<GuestId> depletedGuests = ApplyEmotionChanges(result);
+            List<GuestId> departingGuests = ApplyPatienceChanges(result);
             GuestId dialogueGuestId = result.DialogueGuestId;
 
             if (!_guestRoster.TryGetGuest(dialogueGuestId, out Guest guest) ||
                 !_views.TryGetValue(dialogueGuestId, out GuestView view))
             {
                 Debug.LogWarning($"Guest '{dialogueGuestId}' was not configured.");
-                CompleteCardReaction(depletedGuests);
+                CompleteCardReaction(departingGuests);
                 return;
             }
 
@@ -162,7 +162,7 @@ namespace FirstChannel
             {
                 Debug.LogWarning(
                     $"Replica for guest '{dialogueGuestId}' and card '{result.Card.CardId}' was not found.");
-                CompleteCardReaction(depletedGuests);
+                CompleteCardReaction(departingGuests);
                 return;
             }
 
@@ -172,7 +172,7 @@ namespace FirstChannel
             IsCardReactionPlaying = true;
             _activeView = view;
             _cardHand.SetInteractionEnabled(false);
-            view.ShowReplica(replica.Text);
+            view.ShowReplica(replica.Text, replica.Duration);
 
             if (result.Card.CardType == CardType.Weeping)
                 view.PlayCryAnimation();
@@ -183,18 +183,18 @@ namespace FirstChannel
             {
                 _sound.PlayVoice(
                     replica.VoiceClip,
-                    () => CompleteDialogue(session, depletedGuests));
+                    () => CompleteDialogue(session, departingGuests));
                 return;
             }
 
             _fallbackTimer = DOVirtual.DelayedCall(
                     replica.Duration,
-                    () => CompleteDialogue(session, depletedGuests),
+                    () => CompleteDialogue(session, departingGuests),
                     false)
                 .SetUpdate(true);
         }
 
-        private void CompleteDialogue(int session, List<GuestId> depletedGuests)
+        private void CompleteDialogue(int session, List<GuestId> departingGuests)
         {
             if (_isDisposed || _isStopped || session != _dialogueSession)
                 return;
@@ -204,21 +204,21 @@ namespace FirstChannel
             _activeView = null;
             IsCardReactionPlaying = false;
             _cardHand.SetInteractionEnabled(true);
-            CompleteCardReaction(depletedGuests);
+            CompleteCardReaction(departingGuests);
         }
 
-        private List<GuestId> ApplyEmotionChanges(CardPlayResult result)
+        private List<GuestId> ApplyPatienceChanges(CardPlayResult result)
         {
-            var depletedGuests = new List<GuestId>(2);
-            ApplyEmotionChange(result, GuestId.First, depletedGuests);
-            ApplyEmotionChange(result, GuestId.Second, depletedGuests);
-            return depletedGuests;
+            var departingGuests = new List<GuestId>(2);
+            ApplyPatienceChange(result, GuestId.First, departingGuests);
+            ApplyPatienceChange(result, GuestId.Second, departingGuests);
+            return departingGuests;
         }
 
-        private void ApplyEmotionChange(
+        private void ApplyPatienceChange(
             CardPlayResult result,
             GuestId guestId,
-            List<GuestId> depletedGuests)
+            List<GuestId> departingGuests)
         {
             if (!result.TryGetEmotionChange(guestId, out int change) ||
                 !_guestRoster.TryGetGuest(guestId, out Guest guest))
@@ -226,28 +226,28 @@ namespace FirstChannel
                 return;
             }
 
-            int previousEmotion = guest.EmotionBar.CurrentValue;
-            int emotion = guest.ApplyEmotion(change);
+            int previousPatience = guest.EmotionBar.CurrentValue;
+            int patience = guest.ApplyEmotion(change);
 
             if (_views.TryGetValue(guestId, out GuestView view))
-                view.UpdateEmotion(emotion);
+                view.UpdateEmotion(patience);
 
-            if (previousEmotion > EmotionBar.MinValue && emotion == EmotionBar.MinValue)
-                depletedGuests.Add(guestId);
+            if (previousPatience < EmotionBar.MaxValue && patience >= EmotionBar.MaxValue)
+                departingGuests.Add(guestId);
         }
 
-        private void CompleteCardReaction(List<GuestId> depletedGuests)
+        private void CompleteCardReaction(List<GuestId> departingGuests)
         {
-            for (int i = 0; i < depletedGuests.Count; i++)
+            for (int i = 0; i < departingGuests.Count; i++)
             {
-                GuestId guestId = depletedGuests[i];
+                GuestId guestId = departingGuests[i];
 
                 _sound.Play(SoundType.ExitCharacter);
 
                 if (_views.TryGetValue(guestId, out GuestView view))
                     view.HideGuest();
 
-                GuestEmotionDepleted?.Invoke(guestId);
+                GuestPatienceLimitReached?.Invoke(guestId);
             }
 
             CardReactionCompleted?.Invoke();

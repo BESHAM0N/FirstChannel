@@ -582,6 +582,7 @@ GameObject:
   - component: {fileID: 3568557929625446678}
   - component: {fileID: 2364238885855649328}
   - component: {fileID: 7876219049283484086}
+  - component: {fileID: 5847203948572039481}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -668,6 +669,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5847203948572039481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3696517029783210472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e8795f1fb54d76af28e0128d054d2c, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::FirstChannel.ImageFrameCrossFade
+  _fadeDuration: 0.2
 --- !u!1 &4366121863822262116
 GameObject:
   m_ObjectHideFlags: 0
