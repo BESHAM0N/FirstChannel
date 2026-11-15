@@ -12,6 +12,7 @@ namespace FirstChannel
         private const float MinReplicaDuration = 3f;
         private const float MaxReplicaDuration = 8f;
         private const float CardTalkDuration = 2f;
+        private const float StartGameVolumeMultiplier = 0.6f;
 
         private static readonly string[] IntroReplicas =
         {
@@ -84,7 +85,10 @@ namespace FirstChannel
             {
                 _view.HideReplica();
                 _view.PlayIdleAnimation();
-                _sound.PlayAndWait(SoundType.StartGame, StartGuestIntroductions);
+                _sound.PlayAndWait(
+                    SoundType.StartGame,
+                    StartGuestIntroductions,
+                    StartGameVolumeMultiplier);
                 return;
             }
 
@@ -110,8 +114,7 @@ namespace FirstChannel
             _replicaTimer = DOVirtual.DelayedCall(
                     duration,
                     CompleteReplica,
-                    false)
-                .SetUpdate(true);
+                    false);
         }
 
         private void CompleteReplica()
@@ -129,8 +132,7 @@ namespace FirstChannel
         {
             _cardTalkTimer?.Kill();
             _view.PlayTalkAnimation();
-            _cardTalkTimer = DOVirtual.DelayedCall(CardTalkDuration, CompleteCardTalk, false)
-                .SetUpdate(true);
+            _cardTalkTimer = DOVirtual.DelayedCall(CardTalkDuration, CompleteCardTalk, false);
         }
 
         private void CompleteCardTalk()

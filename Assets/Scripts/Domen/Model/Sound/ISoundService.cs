@@ -2,6 +2,8 @@
 {
     public interface ISoundService
     {
+        event System.Action<float> MasterVolumeChanged;
+
         bool IsSoundEnabled { get; }
 
         float MasterVolume { get; }
@@ -16,10 +18,18 @@
         void ChangeEffectVolume(float volume);
 
         void Play(SoundType type, float volumeMultiplier = 1f, float pitch = 1f);
-        void PlayAndWait(SoundType type, System.Action completed);
+        void PlayAndWait(
+            SoundType type,
+            System.Action completed,
+            float volumeMultiplier = 1f);
         void PlayLoop(SoundType type);
         void StopLoop();
-        void PlayVoice(UnityEngine.AudioClip clip, System.Action completed);
+        void PlayVoice(
+            UnityEngine.AudioClip clip,
+            System.Action completed,
+            float volumeMultiplier = 1f);
+        void PauseVoice();
+        void ResumeVoice();
         void StopVoice();
     }
 }

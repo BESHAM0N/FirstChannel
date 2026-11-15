@@ -8,6 +8,8 @@ namespace FirstChannel
 {
       public sealed class SoundService : ISoundService, IDisposable
     {
+        public event Action<float> MasterVolumeChanged;
+
         private const string SOUND_ENABLED_PREF_KEY = "sound_enabled";
 
         private const string MASTER_VOLUME_PREF_KEY = "master_volume";
@@ -31,6 +33,7 @@ namespace FirstChannel
         private readonly HashSet<SoundType> _bgmTypes;
 
         private SoundType? _lastMusic;
+        private float _activeVoiceVolumeMultiplier = 1f;
 
         [Inject]
         public SoundService(SoundWorld player)
@@ -80,6 +83,8 @@ namespace FirstChannel
             Apply();
 
             RestartMusicIfNeeded();
+            UpdateActiveVoiceVolume();
+            MasterVolumeChanged?.Invoke(MasterVolume);
         }
 
         public void ChangeMusicVolume(float volume)
@@ -98,6 +103,8 @@ namespace FirstChannel
 
             PlayerPrefs.SetFloat(EFFECT_VOLUME_PREF_KEY, EffectVolume);
             PlayerPrefs.Save();
+
+            UpdateActiveVoiceVolume();
         }
 
         public void Play(SoundType type, float volumeMultiplier = 1f, float pitch = 1f)
@@ -119,7 +126,10 @@ namespace FirstChannel
             _player.PlaySfx(type, GetSfxVolume(volumeMultiplier), pitch);
         }
 
-        public void PlayAndWait(SoundType type, Action completed)
+        public void PlayAndWait(
+            SoundType type,
+            Action completed,
+            float volumeMultiplier = 1f)
         {
             if (!IsSoundEnabled)
             {
@@ -127,7 +137,7 @@ namespace FirstChannel
                 return;
             }
 
-            _player.PlaySfx(type, GetSfxVolume(1f), 1f, completed);
+            _player.PlaySfx(type, GetSfxVolume(volumeMultiplier), 1f, completed);
         }
 
         public void PlayLoop(SoundType type)
@@ -145,14 +155,31 @@ namespace FirstChannel
             _player.StopMusic();
         }
 
-        public void PlayVoice(AudioClip clip, Action completed)
+        public void PlayVoice(
+            AudioClip clip,
+            Action completed,
+            float volumeMultiplier = 1f)
         {
-            _player.PlayVoice(clip, GetSfxVolume(1f), completed);
+            _activeVoiceVolumeMultiplier = Mathf.Clamp01(volumeMultiplier);
+            _player.PlayVoice(
+                clip,
+                GetSfxVolume(_activeVoiceVolumeMultiplier),
+                completed);
         }
 
         public void StopVoice()
         {
             _player.StopVoice();
+        }
+
+        public void PauseVoice()
+        {
+            _player.PauseVoice();
+        }
+
+        public void ResumeVoice()
+        {
+            _player.ResumeVoice();
         }
 
         public void Dispose()
@@ -177,6 +204,11 @@ namespace FirstChannel
                 MasterVolume *
                 EffectVolume *
                 SFX_VOLUME_MULTIPLIER);
+        }
+
+        private void UpdateActiveVoiceVolume()
+        {
+            _player.SetVoiceVolume(GetSfxVolume(_activeVoiceVolumeMultiplier));
         }
 
         private void LoadSettings()

@@ -15,6 +15,8 @@ namespace FirstChannel
         [SerializeField] private EmotionBarView _emotionBarView;
         [SerializeField] private GameObject _firstFireAnimation;
         [SerializeField] private GameObject _secondFireAnimation;
+        [SerializeField] private GameObject _viewers;
+        [SerializeField] private TMP_Text _viewersMultiplierText;
         [SerializeField] private GameObject _dialogPanel;
         [SerializeField] private TMP_Text _dialogText;
 
@@ -82,6 +84,7 @@ namespace FirstChannel
 
         private void Awake()
         {
+            InitializeViewersMultiplierView();
             _typewriter = new DialogueTypewriter(_dialogText);
             HideReplica();
         }
@@ -99,6 +102,32 @@ namespace FirstChannel
 
             _firstFireAnimation.SetActive(isFirstFire);
             _secondFireAnimation.SetActive(isSecondFire);
+
+            int viewersMultiplier = EmotionBar.GetViewersMultiplier(value);
+            bool hasViewersMultiplier = viewersMultiplier > 1;
+
+            if (_viewersMultiplierText != null)
+                _viewersMultiplierText.text = $"x{viewersMultiplier}";
+
+            if (_viewers != null)
+                _viewers.SetActive(hasViewersMultiplier);
+        }
+
+        private void InitializeViewersMultiplierView()
+        {
+            if (_viewers == null)
+            {
+                Transform viewersTransform = transform.Find("Viewers");
+
+                if (viewersTransform != null)
+                    _viewers = viewersTransform.gameObject;
+            }
+
+            if (_viewersMultiplierText == null && _viewers != null)
+                _viewersMultiplierText = _viewers.GetComponentInChildren<TMP_Text>(true);
+
+            if (_viewers != null)
+                _viewers.SetActive(false);
         }
 
         private void SetAnimationState(bool isTalking, bool isCrying)

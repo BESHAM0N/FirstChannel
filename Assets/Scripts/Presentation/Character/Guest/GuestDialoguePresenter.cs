@@ -8,6 +8,8 @@ namespace FirstChannel
 {
     public sealed class GuestDialoguePresenter : IInitializable, IDisposable
     {
+        private const float SecondGuestVoiceVolumeMultiplier = 0.5f;
+
         public event Action<GuestId> GuestPatienceLimitReached;
         public event Action IntroductionsCompleted;
         public event Action CardReactionCompleted;
@@ -113,15 +115,17 @@ namespace FirstChannel
 
                 if (replica.VoiceClip != null)
                 {
-                    _sound.PlayVoice(replica.VoiceClip, () => CompleteIntroduction(session));
+                    PlayGuestVoice(
+                        config.GuestId,
+                        replica.VoiceClip,
+                        () => CompleteIntroduction(session));
                     return;
                 }
 
                 _fallbackTimer = DOVirtual.DelayedCall(
                         replica.Duration,
                         () => CompleteIntroduction(session),
-                        false)
-                    .SetUpdate(true);
+                        false);
                 return;
             }
 
@@ -181,7 +185,8 @@ namespace FirstChannel
 
             if (replica.VoiceClip != null)
             {
-                _sound.PlayVoice(
+                PlayGuestVoice(
+                    dialogueGuestId,
                     replica.VoiceClip,
                     () => CompleteDialogue(session, departingGuests));
                 return;
@@ -190,8 +195,7 @@ namespace FirstChannel
             _fallbackTimer = DOVirtual.DelayedCall(
                     replica.Duration,
                     () => CompleteDialogue(session, departingGuests),
-                    false)
-                .SetUpdate(true);
+                    false);
         }
 
         private void CompleteDialogue(int session, List<GuestId> departingGuests)
@@ -205,6 +209,15 @@ namespace FirstChannel
             IsCardReactionPlaying = false;
             _cardHand.SetInteractionEnabled(true);
             CompleteCardReaction(departingGuests);
+        }
+
+        private void PlayGuestVoice(GuestId guestId, AudioClip clip, Action completed)
+        {
+            float volumeMultiplier = guestId == GuestId.Second
+                ? SecondGuestVoiceVolumeMultiplier
+                : 1f;
+
+            _sound.PlayVoice(clip, completed, volumeMultiplier);
         }
 
         private List<GuestId> ApplyPatienceChanges(CardPlayResult result)

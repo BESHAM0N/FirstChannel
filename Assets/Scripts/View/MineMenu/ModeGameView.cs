@@ -26,6 +26,11 @@ namespace FirstChannel
         [SerializeField] private Button _withCensorshipButton;
         [SerializeField] private Button _uncensoredButton;
 
+        [Header("Tutor")]
+        [SerializeField] private GameObject _tutorPanel;
+        [SerializeField] private Button _tutorYesButton;
+        [SerializeField] private Button _tutorNoButton;
+
         [SerializeField] private GameObject _gameModeWithCensorship1;
         [SerializeField] private GameObject _gameModeWithCensorship2;
 
@@ -40,12 +45,15 @@ namespace FirstChannel
         [Inject] private ISoundService _soundService;
 
         private const string GameSceneName = "GameScene";
+        private const string TutorSceneName = "TutorScene";
 
         private ModeGameButtonHover _withCensorshipHover;
         private ModeGameButtonHover _uncensoredHover;
 
         private void Awake()
         {
+            _tutorPanel.SetActive(false);
+
             _withCensorshipHover = ConfigureHover(
                 _withCensorshipButton,
                 _gameModeWithCensorship1,
@@ -70,6 +78,8 @@ namespace FirstChannel
 
             _withCensorshipButton.onClick.AddListener(StartWithCensorship);
             _uncensoredButton.onClick.AddListener(StartUncensored);
+            _tutorYesButton.onClick.AddListener(StartTutor);
+            _tutorNoButton.onClick.AddListener(StartGame);
         }
 
         private void OnDisable()
@@ -82,21 +92,40 @@ namespace FirstChannel
 
             _withCensorshipButton.onClick.RemoveListener(StartWithCensorship);
             _uncensoredButton.onClick.RemoveListener(StartUncensored);
+            _tutorYesButton.onClick.RemoveListener(StartTutor);
+            _tutorNoButton.onClick.RemoveListener(StartGame);
         }
 
         public void Show()
         {
+            _tutorPanel.SetActive(false);
             gameObject.SetActive(true);
         }
 
         private void StartWithCensorship()
         {
-            StartGame(GameMode.WithCensorship);
+            SelectGameMode(GameMode.WithCensorship);
         }
 
         private void StartUncensored()
         {
-            StartGame(GameMode.Uncensored);
+            SelectGameMode(GameMode.Uncensored);
+        }
+
+        private void StartTutor()
+        {
+            LoadScene(TutorSceneName);
+        }
+
+        private void StartGame()
+        {
+            LoadScene(GameSceneName);
+        }
+
+        private void LoadScene(string sceneName)
+        {
+            _soundService.Play(SoundType.ButtonClick);
+            SceneManager.LoadScene(sceneName);
         }
 
         private void PlayCensorshipHoverSound()
@@ -145,10 +174,10 @@ namespace FirstChannel
             return hover;
         }
 
-        private static void StartGame(GameMode gameMode)
+        private void SelectGameMode(GameMode gameMode)
         {
             GameModeSelection.Set(gameMode);
-            SceneManager.LoadScene(GameSceneName);
+            _tutorPanel.SetActive(true);
         }
     }
 }

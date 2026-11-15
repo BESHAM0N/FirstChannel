@@ -41,7 +41,6 @@ namespace FirstChannel
                     characterCount,
                     duration)
                 .SetEase(Ease.Linear)
-                .SetUpdate(true)
                 .OnComplete(() => _animation = null);
         }
 

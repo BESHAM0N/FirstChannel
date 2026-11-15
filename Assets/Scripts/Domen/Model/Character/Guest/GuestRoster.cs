@@ -24,5 +24,15 @@ namespace FirstChannel
         {
             return _guests.TryGetValue(guestId, out guest);
         }
+
+        public int GetViewersMultiplier()
+        {
+            int multiplier = 1;
+
+            foreach (Guest guest in _guests.Values)
+                multiplier *= guest.EmotionBar.ViewersMultiplier;
+
+            return multiplier;
+        }
     }
 }

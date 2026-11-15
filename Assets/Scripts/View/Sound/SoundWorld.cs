@@ -16,6 +16,7 @@ namespace FirstChannel
 
         private Coroutine _voiceRoutine;
         private Action _voiceCompleted;
+        private bool _isVoicePaused;
 
         [Inject]
         public void Initialize(SoundConfig config)
@@ -105,7 +106,36 @@ namespace FirstChannel
             _voice.loop = false;
             _voiceCompleted = completed;
             _voice.Play();
+
+            if (_isVoicePaused)
+                _voice.Pause();
+
             _voiceRoutine = StartCoroutine(WaitForVoice());
+        }
+
+        public void SetVoiceVolume(float volume)
+        {
+            EnsureSources();
+            _voice.volume = Mathf.Clamp01(volume);
+        }
+
+        public void PauseVoice()
+        {
+            _isVoicePaused = true;
+
+            if (_voice != null && _voice.isPlaying)
+                _voice.Pause();
+        }
+
+        public void ResumeVoice()
+        {
+            if (!_isVoicePaused)
+                return;
+
+            _isVoicePaused = false;
+
+            if (_voice != null && _voice.clip != null)
+                _voice.UnPause();
         }
 
         public void StopVoice()
@@ -134,7 +164,8 @@ namespace FirstChannel
 
         private IEnumerator WaitForVoice()
         {
-            while (_voice != null && _voice.isPlaying)
+            while (_voice != null &&
+                   (_voice.isPlaying || (_isVoicePaused && _voice.clip != null)))
                 yield return null;
 
             _voiceRoutine = null;

@@ -54,7 +54,7 @@ namespace FirstChannel
             _settingPanelView.MusicVolumeChanged -= _sound.ChangeMusicVolume;
             _settingPanelView.EffectVolumeChanged -= _sound.ChangeEffectVolume;
 
-            RestoreTimeScale();
+            ResumeGame();
             _settingPanelView.Dispose();
             _pauseView.Dispose();
         }
@@ -68,6 +68,7 @@ namespace FirstChannel
             _isPaused = true;
             _timeScaleBeforePause = Time.timeScale;
             Time.timeScale = 0f;
+            _sound.PauseVoice();
 
             SyncSliders();
             _pauseView.Show();
@@ -82,13 +83,13 @@ namespace FirstChannel
             _sound.Play(SoundType.ButtonClick);
             _settingPanelView.OnHide();
             _pauseView.Hide();
-            RestoreTimeScale();
+            ResumeGame();
         }
 
         private void OpenMainMenu()
         {
             _sound.Play(SoundType.ButtonClick);
-            RestoreTimeScale();
+            ResumeGame();
             _sound.StopLoop();
             SceneManager.LoadScene(_mainMenuSceneName);
         }
@@ -101,12 +102,13 @@ namespace FirstChannel
                 _sound.EffectVolume);
         }
 
-        private void RestoreTimeScale()
+        private void ResumeGame()
         {
             if (!_isPaused)
                 return;
 
             Time.timeScale = _timeScaleBeforePause;
+            _sound.ResumeVoice();
             _isPaused = false;
         }
     }

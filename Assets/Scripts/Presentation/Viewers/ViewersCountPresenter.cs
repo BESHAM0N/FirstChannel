@@ -12,6 +12,7 @@ namespace FirstChannel
         private readonly int _maxViewersPerTick;
         private readonly float _tickInterval;
         private readonly ViewersCount _viewers;
+        private readonly GuestRoster _guestRoster;
         private readonly ViewersCountView _view;
         private readonly CardHandPresenter _cardHand;
         private readonly ISoundService _sound;
@@ -25,6 +26,7 @@ namespace FirstChannel
             int maxViewersPerTick,
             float tickInterval,
             ViewersCount viewers,
+            GuestRoster guestRoster,
             ViewersCountView view,
             CardHandPresenter cardHand,
             ISoundService sound)
@@ -33,6 +35,7 @@ namespace FirstChannel
             _maxViewersPerTick = Mathf.Max(_minViewersPerTick, maxViewersPerTick);
             _tickInterval = Mathf.Max(0.01f, tickInterval);
             _viewers = viewers;
+            _guestRoster = guestRoster;
             _view = view;
             _cardHand = cardHand;
             _sound = sound;
@@ -50,7 +53,7 @@ namespace FirstChannel
             if (!IsRunning)
                 return;
 
-            _elapsedTime += Time.unscaledDeltaTime;
+            _elapsedTime += Time.deltaTime;
 
             while (_elapsedTime >= _tickInterval)
             {
@@ -58,7 +61,7 @@ namespace FirstChannel
                 int viewersToAdd = UnityEngine.Random.Range(
                     _minViewersPerTick,
                     _maxViewersPerTick + 1);
-                _viewers.Add(viewersToAdd);
+                _viewers.Add(viewersToAdd * _guestRoster.GetViewersMultiplier());
             }
         }
 
