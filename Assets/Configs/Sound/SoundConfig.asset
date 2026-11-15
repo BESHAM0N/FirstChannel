@@ -85,3 +85,6 @@ MonoBehaviour:
   - SourceType: 1
     SoundType: 26
     AudioClip: {fileID: 8300000, guid: 44eccb67c8555e244ba9c675cf50e931, type: 3}
+  - SourceType: 1
+    SoundType: 27
+    AudioClip: {fileID: 8300000, guid: 6c8d4c6dd8fae7248b9ad978fb948381, type: 3}

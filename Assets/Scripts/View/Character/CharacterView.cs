@@ -12,6 +12,7 @@ namespace FirstChannel
         [SerializeField] private GameObject _dialogPanel;
         [SerializeField] private TMP_Text _text;
         [SerializeField] private Animator _animator;
+        [SerializeField] private AudioClip[] _introVoiceClips;
 
         private DialogueTypewriter _typewriter;
 
@@ -48,6 +49,14 @@ namespace FirstChannel
         public void PlayIdleAnimation()
         {
             SetTalkState(false);
+        }
+
+        public AudioClip GetIntroVoiceClip(int index)
+        {
+            if (_introVoiceClips == null || index < 0 || index >= _introVoiceClips.Length)
+                return null;
+
+            return _introVoiceClips[index];
         }
 
         private void Awake()

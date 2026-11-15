@@ -30,6 +30,7 @@ namespace FirstChannel
         private Tween _cardTalkTimer;
         private int _replicaIndex;
         private bool _isDisposed;
+        private bool _isIntroVoicePlaying;
 
         public MainCharacterPresenter(
             CharacterView view,
@@ -62,6 +63,13 @@ namespace FirstChannel
             _cardHand.CardApplied -= OnCardApplied;
             _replicaTimer?.Kill();
             _replicaTimer = null;
+
+            if (_isIntroVoicePlaying)
+            {
+                _isIntroVoicePlaying = false;
+                _sound.StopVoice();
+            }
+
             _cardTalkTimer?.Kill();
             _cardTalkTimer = null;
             _view.PlayIdleAnimation();
@@ -81,13 +89,24 @@ namespace FirstChannel
             }
 
             string replica = IntroReplicas[_replicaIndex];
-            float duration = Mathf.Clamp(
-                replica.Length / CharactersPerSecond,
-                MinReplicaDuration,
-                MaxReplicaDuration);
+            AudioClip voiceClip = _view.GetIntroVoiceClip(_replicaIndex);
+            float duration = voiceClip != null
+                ? Mathf.Max(0.1f, voiceClip.length)
+                : Mathf.Clamp(
+                    replica.Length / CharactersPerSecond,
+                    MinReplicaDuration,
+                    MaxReplicaDuration);
 
             _view.PlayTalkAnimation();
             _view.ShowReplica(replica, duration);
+
+            if (voiceClip != null)
+            {
+                _isIntroVoicePlaying = true;
+                _sound.PlayVoice(voiceClip, CompleteReplica);
+                return;
+            }
+
             _replicaTimer = DOVirtual.DelayedCall(
                     duration,
                     CompleteReplica,
@@ -97,6 +116,10 @@ namespace FirstChannel
 
         private void CompleteReplica()
         {
+            if (_isDisposed)
+                return;
+
+            _isIntroVoicePlaying = false;
             _replicaTimer = null;
             _replicaIndex++;
             PlayNextReplica();
