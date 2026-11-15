@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace FirstChannel
 {
-    public sealed class PausePresenter : IInitializable, IDisposable
+    public sealed class PausePresenter : IInitializable, ITickable, IDisposable
     {
         private readonly PauseView _pauseView;
         private readonly SettingPanelView _settingPanelView;
@@ -57,6 +58,19 @@ namespace FirstChannel
             ResumeGame();
             _settingPanelView.Dispose();
             _pauseView.Dispose();
+        }
+
+        public void Tick()
+        {
+            Keyboard keyboard = Keyboard.current;
+
+            if (keyboard == null || !keyboard.escapeKey.wasPressedThisFrame)
+                return;
+
+            if (_isPaused)
+                Close();
+            else
+                Open();
         }
 
         private void Open()
